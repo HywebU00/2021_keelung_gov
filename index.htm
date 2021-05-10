@@ -21,24 +21,42 @@
       background: #FFF
     }
     
-    .demo_wrap h1 {
-      display: block;
-      margin: 0px auto;
-      max-width: 300px;
+    h1 {
       float: left;
-      margin-right: 1em
+      margin: 30px 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-size: 2.125rem;
     }
     
-    @media screen and (max-width:545px) {
-      .demo_wrap h1 {
-        max-width: 100%;
-        float: none;
-        text-align: center
-      }
+    h1 a {
+      display: flex;
+      white-space: nowrap;
+      align-items: center;
+      color: #222;
     }
     
-    .demo_wrap h1 img {
-      width: 300px
+    h1 span.keelung {
+      font-size: .9375rem;
+      line-height: 120%;
+      color: #222;
+      white-space: nowrap;
+      margin-right: 6px;
+    }
+    
+    h1 span.keelung em {
+      color: #fff;
+      background: #222;
+      font-style: normal;
+      display: block;
+      text-align: center;
+    }
+    
+    span.keelung_en {
+      font-size: .6875rem;
+      line-height: 1rem;
+      color: #666;
+      margin-left: 6px;
     }
     
     .num {
@@ -86,10 +104,18 @@
 
 <body>
   <div class="demo_wrap">
-    <h1><img src="images/logo.png" alt=""></h1>
-    <div class="btn_grp">
+    <h1>
+      <a href="index.htm">
+        <span class="keelung"><em>基隆</em>市政府</span> 人事處
+        <span class="keelung_en">
+              Department of Personnel<br>
+              Keelung City Government
+            </span>
+      </a>
+    </h1>
+    <!-- <div class="btn_grp">
       <a href="#" class="btn">切版檔案請按此下載</a>
-    </div>
+    </div> -->
     <hr>
     <div class="table_wrapper">
       <!-- hyUI 標準頁面 -->
