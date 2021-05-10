@@ -1,0 +1,93 @@
+// 此變數為框架之整體變數，控制整體網站之設定，包含 顏色、文字、格線系統
+// 於mixins 資料夾內，各個模組也有其個別使用的變數，請至個別檔案設定，個別使用變數不含在此設定
+//-------------------------------------------------------------顏色---------//
+$goCenter:#71c673;
+$h1Color_darken:#4b347a;
+$h1Color_lighten:#dacff0;
+$headerBg:linear-gradient(90deg, #4a3278 20%, #534f8f 80%);
+$navColor:#71c673;
+$navColor_darken: #62469a;
+$navColor_lighten:#dacff0;
+$navDep:url(../images/color/purple/icon_dep.svg) no-repeat center center;
+$navHome:url(../images/color/purple/icon_home.svg) no-repeat center center;
+$navSitemap:url(../images/color/purple/icon_sitemap.svg) no-repeat center center;
+$navMail:url(../images/color/purple/icon_mail.svg) no-repeat center center;
+$decoPic:url(../images/color/purple/decopic.png);
+$menuBg:linear-gradient(90deg, #4a3278 100%, #331e4c 100%);
+$menuColor:#4a3278;
+$menuHover:#71c673;
+$sliderDot:#71c673;
+$sliderDotActive:#545292;
+$blockTitle:linear-gradient(90deg, #62469a 50%, #6aa96c 50%);
+$moreColor:#71c673;
+$moreHover:#62469a;
+$tabColor:#6aa96c;
+$tabHover:#71c673;
+$tabDepColor:#62469a;
+$blockTitle2 :linear-gradient(90deg, #d27aff 50%, #6aa96c 50%);
+$serviceColor:#3e227b;
+$serviceColor2:#6aa96c;
+$serviceBg:url(../images/color/purple/bg.png);
+$serviceBg2:url(../images/color/purple/bg2.jpg);
+$serviceText:#1d236c;
+$videoColor:#d1e4c9;
+$fatfooterColor :#6aa96c;
+$fatfooterBgColor: linear-gradient(180deg, #444587 0%, #48397e 100%); //fatFooter 底色
+$footerBgColor: linear-gradient(180deg, #48397e 0%, #4a3278 100%); //fatFooter 底色
+$btnStyle1:#71c673;
+$btnStyle2:#545292;
+$text-color:#444;
+$categoryColor:#4b347a;
+$categoryHover:#71c673;
+$leftmenuColor:#4b347a;
+$leftmenuActive:#545292;
+$leftmenuHover:#71c673;
+// 定義顏色 此顏色可自由變換
+$primaryColor: #4b347a; //主色
+$secondaryColor: #6aa96c; //輔色
+$lightColor: #fec003; //點綴
+$linkColor: #71c673; //連結
+$importantColor: #eb0202; //重要
+// 但注意真實顏色與語意的關聯必須易於辨識
+$color-blue: #0066cc;
+$color-green: #298729;
+$color-orange: #cd4502;
+$color-red: #eb0202;
+$color-yellow: #fec003;
+$color-purple: #781f79;
+$color-gray: #ccc;
+$color-dark: #333333;
+$color-hr: #666; //hr顏色
+$color-word: #222; //一般字的顏色
+$btn-word: #222; //按鈕字的顏色
+// 連結顏色
+$aColor: #4a3278;
+$aHover: #71c673;
+$aFocus:#f9b900;
+// 表單focus顏色
+$form-focus: #545292; //表單
+$form-btn: #71c673; //表單
+//-------------------------------------------------------------字型--------//
+// 字型設定
+$font-family: Lato,
+'PingFang TC',
+'Helvetica Neue',
+Helvetica,
+微軟正黑體,
+Arial,
+sans-serif;
+$font-size: 1em;
+//-------------------------------------------------------------格線系統-----//
+// 格線系統
+$grid-columns: 12 !default; //格線欄位數
+$grid-gutter-width: 30px !default; //左右padding
+$container-max: 1200px !default; //container最大寬
+//mediaquery
+$screen-lg: 1400px !default; //電腦
+$screen-md: 992px !default; //平板
+$screen-sm: 768px !default; //手機
+$screen-xs: 576px !default; //極小尺寸
+//-------------------------------------------------------------客製化------//
+$fatfooter-length: 6; //fatfooter選單一行個數
+//-------------------------------------------------------------客製化------//
+$rounded-angle: 10px; //整站導角
