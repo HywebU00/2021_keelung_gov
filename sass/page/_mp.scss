@@ -443,7 +443,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: $serviceBg no-repeat center top;
+    background: $serviceBg no-repeat left top;
     background-size: cover;
     background-attachment: fixed;
     @include screen('mobile') {}
