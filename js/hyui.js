@@ -46,8 +46,8 @@ $(function() {
   var menu_status = false,
     _sidebar = $('.sidebar'),
     _nav = $('.navigation'),
-    _search = $('.navlist .search'),
-    _fontSize = $('.navlist .font_size'),
+    _search = $('.navSearch .search'),
+    _fontSize = $('.navFont .font_size'),
     _sidebarClose = $('.sidebarClose'),
     _sidebarCtrl = $('.sidebarCtrl'),
     _overlay = $('.menu_overlay');
@@ -116,7 +116,7 @@ $(function() {
   _nav.clone().prependTo(_mArea);
   _menu.clone().prependTo(_mArea);
   _megamenu.clone().prependTo(_mArea);
-  _search.clone().prependTo(_body).addClass('m_search');
+  // _search.clone().prependTo(_body).addClass('m_search');
   var liHasChild_level1 = $('aside .menu ul').children('li.hasChild'),
     liHasChild_level2 = $('aside .menu ul ul').children('li.hasChild'),
     liHasChild_level3 = $('aside .menu ul ul ul').children('li.hasChild'),
@@ -213,12 +213,12 @@ $(function() {
       search_mode = false;
       _searchCtrl.off().on('click', function(e) {
         if (!search_mode) {
-          $('.m_search').stop(true, false).slideDown('400', 'easeOutQuint');
+          $('.navSearch').stop(true, false).show();
           _window.off('resize');
-          // $('.m_search').find('input[type="text"]').focus();
+          $('.navSearch').find('input[type="text"]').focus();
           search_mode = true;
         } else {
-          $('.m_search').hide();
+          $('.navSearch').hide();
           search_mode = false;
         }
       });
@@ -359,13 +359,13 @@ $(function() {
       ww = _window.outerWidth();
       if (ww >= wwSmall && $(this).scrollTop() > stickyMenuTop) {
         $('.header').addClass('fixed');
-        $('.header').css('margin-top', -1 * customHeight);
+        // $('.header').css('margin-top', -1 * customHeight);
         // $('.main').css('margin-top', headerHeight);
         // $('.main').css('margin-top', 0);
       } else {
         $('.header').removeClass('fixed');
-        $('.header').css('margin-top', 0);
-        $('.main').css('margin-top', 0);
+        // $('.header').css('margin-top', 0);
+        // $('.main').css('margin-top', 0);
       }
     });
   }

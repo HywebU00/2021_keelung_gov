@@ -1,18 +1,17 @@
 .fatfooter {
   @extend %clearfix;
+  padding: 3em 3rem 30px 3rem;
+  background: #555;
+  box-sizing: border-box;
+  @include screen('tablet') {
+    padding: 3rem 3rem 0 3rem;
+  }
   @include screen('mobile') {
-    display: none;
+    padding: 3rem 30px 0 30px;
   }
   .container {
-    box-sizing: border-box;
-    background: $fatfooterBgColor;
-    padding: 0 100px 1em 100px;
-    @media screen and (max-width: 1200px) {
-      padding: 0 3rem 1em 3rem;
-    }
-    @include screen('tablet') {
-      padding: 0 30px 1em 30px;
-    }
+    display: flex;
+    align-items: flex-start;
   }
   // 按鈕
   .btn-fatfooter {
@@ -27,7 +26,7 @@
     background: #222;
     position: absolute;
     right: calc(50% - 25px);
-    top: -25px;
+    top: -70px;
     z-index: 90;
     text-indent: -9999px;
     border-radius: 50%;
@@ -40,10 +39,13 @@
       border-bottom: none;
       transform: rotate(-45deg);
       transition: .3s ease-out;
+      display: block;
+      position: absolute;
+      top: 20px;
     }
     &:hover,
     &:focus {
-      background: $fatfooterColor;
+      background: #4a3278;
       color: #fff;
       text-decoration: none;
       cursor: pointer;
@@ -56,7 +58,67 @@
     &.close {
       &:before {
         transform: rotate(135deg) !important;
-        top: 5px;
+        top: 15px;
+      }
+    }
+  }
+  .fatfooter_info {
+    flex: 0 0 280px;
+    @include screen('mobile') {
+      flex: 0 0 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+    @media screen and (max-width: 560px) {
+      flex-direction: column;
+    }
+    .fatfooter_logo {
+      margin-top: 0.5rem;
+      @include screen('mobile') {
+        margin-top: 0;
+        flex: 0 0 160px;
+      }
+      @media screen and (max-width: 560px) {
+        flex: 0 0 auto;
+        text-align: center;
+      }
+    }
+    p {
+      font-size: .875rem;
+      color: rgba(255, 255, 255, .65);
+      margin-left: 10px;
+      @include screen('mobile') {
+        flex: 1 1 auto;
+        margin-top: 0;
+        margin-left: 1rem;
+      }
+      @media screen and (max-width: 560px) {
+        margin-left: 0;
+        text-align: center;
+      }
+    }
+    .fatfooter_link {
+      width: 100%;
+      display: flex;
+      @include screen('mobile') {
+        flex-direction: column;
+        flex: 0 1 120px;
+      }
+      a {
+        padding: 10px;
+        color: #fff;
+        background: $primaryColorDarken;
+        margin: 0 0 0 10px;
+        transition: all .5s;
+        @include screen('mobile') {
+          margin: 0 0 10px 0;
+          text-align: center;
+        }
+        &:hover,
+        &:focus {
+          background: $secondaryColorDarken;
+        }
       }
     }
   }
@@ -64,23 +126,30 @@
     overflow: hidden;
     display: block;
     position: relative;
-    padding: 3em 10px 0 10px;
+    padding: 0 10px;
     box-sizing: border-box;
-    ul {
+    @include screen('mobile') {
+      display: none;
+    }
+    >ul {
       display: flex;
       @include li-reset;
       justify-content: space-between;
-      li {
-        flex: 1 1 auto;
+      @include screen('tablet') {
+        flex-wrap: wrap;
+      }
+      >li {
+        flex: 1 1 16%;
         box-sizing: border-box;
         @include screen('tablet') {
-          flex: 1 1 16%;
+          flex: 1 1 33%;
+          margin-bottom: 1rem;
         }
         a {
           line-height: 1.5;
           display: block;
           font-weight: bold;
-          padding: .5em 0px;
+          padding: .4em 0px;
           box-sizing: border-box;
           color: #fff;
           &:hover {
@@ -88,14 +157,15 @@
             color: $linkColor;
           }
         }
-        ul {
+        >ul {
           display: block;
           margin: 0;
           padding: 0 1em 0 0;
+          @include li-reset;
           @include screen('mobile') {
             width: auto;
           }
-          li {
+          >li {
             // flex: 0 0 100%;
             a {
               display: block;
@@ -106,6 +176,9 @@
               line-height: 1.5em;
               padding: .5em 0;
               background: none;
+              @include screen('tablet') {
+                padding: .2em 0;
+              }
               &:hover {
                 color: rgba(255, 255, 255, 1);
                 text-decoration: underline;

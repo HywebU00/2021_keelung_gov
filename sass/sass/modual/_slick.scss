@@ -141,7 +141,7 @@
   outline: none;
   box-shadow: none;
   transition: .3s ease-out;
-  border-radius: 30px;
+  border-radius: 0;
   &:hover,
   &:focus {
     border: none !important;
@@ -158,12 +158,12 @@
 
 .slick-prev {
   left: 10px;
-  background: url('../images/slick/icon_arrow_left.png') center center no-repeat RGBA(255, 255, 255, .3);
+  background: url('../images/slick/icon_arrow_left.png') center center no-repeat RGBA(255, 255, 255, .5);
   background-size: 30px 30px;
   /* 箭頭 hover及focus 樣式 */
   &:hover,
   &:focus {
-    background: url('../images/slick/icon_arrow_left_inverse.png') center center no-repeat RGBA(0, 0, 0, .3);
+    background: url('../images/slick/icon_arrow_left_inverse.png') center center no-repeat RGBA(0, 0, 0, .5);
     background-size: 30px 30px;
   }
   &:hover {
@@ -176,12 +176,12 @@
 
 .slick-next {
   right: 10px;
-  background: url('../images/slick/icon_arrow_right.png') center center no-repeat RGBA(255, 255, 255, .3);
+  background: url('../images/slick/icon_arrow_right.png') center center no-repeat RGBA(255, 255, 255, .5);
   background-size: 30px 30px;
   /* 箭頭 hover及focus 樣式 */
   &:hover,
   &:focus {
-    background: url('../images/slick/icon_arrow_right_inverse.png') center center no-repeat RGBA(0, 0, 0, .3);
+    background: url('../images/slick/icon_arrow_right_inverse.png') center center no-repeat RGBA(0, 0, 0, .5);
     background-size: 30px 30px;
   }
   &:hover {
@@ -307,35 +307,6 @@
 //     }
 // }
 // slick._scss
-// adSlider
-.adSlider {
-  @include gutter(70px);
-  margin-bottom: 20px;
-  @include screen('mobile') {
-    @include gutter();
-  }
-  .slick-prev {
-    left: 0;
-    top: 0;
-  }
-  .slick-next {
-    right: 0;
-    top: 0;
-  }
-  .img-container {
-    width: 165px;
-    height: 55px;
-    margin: 0px 15px;
-    a {
-      display: block;
-      img {
-        margin: 0 auto;
-        object-fit: contain;
-      }
-    }
-  }
-}
-
 //  slick燈箱
 // .lightbox_slider {
 //   h3 {

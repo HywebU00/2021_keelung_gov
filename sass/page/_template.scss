@@ -27,7 +27,9 @@ body {
 .wrapper {
   width: 1200px;
   margin: 0px auto;
-  background: #f8f8f8;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
   @media screen and (max-width: 1200px) {
     width: 100%;
   }
@@ -47,11 +49,17 @@ body {
 .main {
   position: relative;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 60px;
   @include screen('mobile') {
-    padding-top: 60px;
+    padding: 0 30px;
   }
-  // 可先設定一個中央區塊最大寬，限制accesskey對齊
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    .accesskey {
+      margin-top: 10px;
+    }
+  }
   h2 {
     line-height: 1.25em;
   }
@@ -65,28 +73,51 @@ body {
   h1.title,
   h2.title {
     line-height: 1.25em;
-    margin: 3.2em 0 .4em 0;
-    @include screen('mobile') {
-      margin: 2em 0 .4em 0;
-    }
+    margin: 1.8em 0 .4em 0;
+    color: #4a3278;
+  }
+}
+
+.inner_img {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  img {
+    width: 100%;
+    height: 300px;
+  }
+  &:before {
+    content: "";
+    width: 443px;
+    height: 131px;
+    display: block;
+    background: $decoPic no-repeat 0 0;
+    position: absolute;
+    right: -100px;
+    z-index: 99;
+    bottom: -80px;
+  }
+  &:after {
+    content: "";
+    width: 100%;
+    height: 50px;
+    display: block;
+    position: absolute;
+    left: 0;
+    background: #dedede;
+    bottom: -50px;
   }
 }
 
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
+  padding: 14px 60px 20px 60px;
   >.container {
-    @include gutter(90px); //gutter 代表左右要留白
-    display: flex;
-    @include screen('mobile') {
-      @include gutter(30px);
-    }
-    #aC {
-      left: 320px;
-      top: 6px;
-      @include screen('tablet') {
-        left: 10px;
-      }
+    .accesskey {
+      left: -30px;
+      margin-top: 0;
+      top: -2px;
     }
   }
   .center_block {
@@ -101,7 +132,7 @@ body {
     // float: left;
     // width: 260px;
     margin-right: 40px;
-    margin-top: 76px;
+    margin-top: 36px;
     &.hidden {
       +.center_block {
         max-width: 100%;
@@ -272,20 +303,20 @@ body {
   @include screen('mobile') {
     padding: 1.5em 1em 1em;
   }
-  &:before {
-    content: "";
-    width: 443px;
-    height: 131px;
-    display: block;
-    background: $decoPic no-repeat right center;
-    position: absolute;
-    right: -50px;
-    bottom: -60px;
-    z-index: 11;
-    @include screen('tablet') {
-      display: none;
-    }
-  }
+  // &:before {
+  //   content: "";
+  //   width: 443px;
+  //   height: 131px;
+  //   display: block;
+  //   background: $decoPic no-repeat right center;
+  //   position: absolute;
+  //   right: -50px;
+  //   bottom: -60px;
+  //   z-index: 11;
+  //   @include screen('tablet') {
+  //     display: none;
+  //   }
+  // }
   .form_grid {
     margin: 0;
     .form_grp {
@@ -331,7 +362,7 @@ body {
           margin: 0 0em .3em .5em;
           border: 1px solid #ccc;
           color: #444;
-          border-radius: 6px;
+          border-radius: 2px;
           transition: all .5s;
           position: relative;
           background: #fff;
@@ -374,6 +405,9 @@ body {
           opacity: .5;
         }
       }
+    }
+    .btn_grp {
+      display: block;
     }
   }
 }
@@ -445,6 +479,112 @@ body {
   }
 }
 
+.process {
+  clear: both;
+  overflow: hidden;
+  padding-top: 1em;
+  padding-bottom: 3em;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  ul {
+    @include li-reset;
+    li {
+      float: left;
+      position: relative;
+      width: 20%;
+      text-align: center;
+      &:before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        border-bottom: 3px solid #999;
+        display: block;
+        position: absolute;
+        top: 23px;
+        left: -50%;
+        z-index: 9;
+      }
+      .step {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: block;
+        background: #767676;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+        margin: 0 auto 1em auto;
+        position: relative;
+        z-index: 11;
+        font-weight: bold;
+      }
+      .text {
+        color: #767676
+      }
+      &:first-child:before {
+        display: none;
+      }
+      &.active {
+        &:before {
+          content: "";
+          border-bottom: 3px dashed $secondaryColor;
+        }
+        &:after {
+          content: "";
+          width: 56px;
+          height: 56px;
+          border: 2px solid $secondaryColor;
+          border-radius: 50%;
+          display: block;
+          position: absolute;
+          z-index: 10;
+          left: 50%;
+          margin-left: -30px;
+          top: -5px;
+          background: #fff;
+        }
+        .step {
+          background: $secondaryColor;
+        }
+        .text {
+          color: $secondaryColor;
+        }
+        ~li {
+          &:before {
+            border-bottom: 3px solid $primaryColor;
+          }
+          .step {
+            background: $primaryColor;
+          }
+          .text {
+            color: $primaryColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+.reservation {
+  .confirm {
+    padding: 1.5em 3em 1em;
+    line-height: 180%;
+    margin: 1em auto 2em;
+    @include box-sizing;
+    background: #e8e8e8 url(../images/servicebg.jpg) no-repeat right top;
+    border-top: 3px solid $primaryColor;
+    .form_grid {
+      border-top: 1px solid #ccc;
+    }
+    .form_grid .form_grp .form_content {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
 .reservation_notice {
   padding: 3em 4em;
   background: #444;
@@ -485,42 +625,71 @@ body {
 }
 
 .reservation_form {
-  margin: 1em auto 2em;
-  @include box-sizing;
-  padding: 1.5em 4em 1em;
-  border: 1px solid #ddd;
-  border-top: 3px solid $primaryColor;
-  position: relative;
-  @include screen('mobile') {
-    padding: 1.5em 1em 1em;
+  h3,
+  legend {
+    margin: 0;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    color: $primaryColor;
+    font-size: 1.25em;
+    &:before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      display: block;
+      border-top: 2px solid $primaryColor;
+      border-right: 2px solid $primaryColor;
+      position: absolute;
+      left: 0;
+      top: 7px;
+      transform: rotate(45deg);
+      z-index: 10;
+    }
+    ~.form_grid {
+      margin-top: 0;
+    }
+  }
+  fieldset {
+    margin-bottom: 15px;
+    &~fieldset {
+      border-top: 1px solid #ccc;
+    }
   }
   form.form_grid {
+    padding: 0;
+    line-height: 180%;
     margin: 0;
+    @include box-sizing;
+    background: none;
+    border-top: 0;
+    .form_group {
+      padding: 1.5em;
+      line-height: 180%;
+      margin: 0 auto 2em;
+      @include box-sizing;
+      background: #e8e8e8 url(../images/servicebg.jpg) no-repeat right top;
+      border-top: 3px solid $primaryColor;
+    }
     .form_grp {
-      @include screen('mobile') {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
       &:last-child {
         border-bottom: 0;
       }
       .form_title {
-        max-width: 200px;
-        flex: 0 0 200px;
-        text-align: right;
-        padding-left: 0;
+        max-width: 22%;
+        flex: 0 0 22%;
         @include screen('mobile') {
-          flex: 0 0 100%;
-          max-width: 100%;
+          width: 100%;
         }
       }
       .form_content {
-        max-width: calc(100% - 200px);
-        flex: auto;
-        flex-basis: calc(100% - 200px);
-        align-items: flex-start;
-        @include screen('tablet') {
-          flex: 0 0 100%;
+        max-width: 78%;
+        flex: 0 0 78%;
+        @include screen('mobile') {
+          width: 100%;
         }
         .form_grp {
           border-bottom: 1px dashed #ccc!important;
@@ -537,6 +706,7 @@ body {
         input.wauto {
           width: auto;
           min-width: 50%;
+          margin-left: 0;
           margin-top: 0;
         }
         a.send {
@@ -545,12 +715,12 @@ body {
           vertical-align: middle;
           text-decoration: none;
           white-space: nowrap;
-          line-height: 38px;
+          line-height: 36px;
           padding: 0 1.5em 0 3.2em;
-          margin: 0;
+          margin: 0 0em .3em .5em;
           border: 1px solid #ccc;
           color: #444;
-          border-radius: 5px;
+          border-radius: .2em;
           transition: all .5s;
           position: relative;
           background: #fff;
@@ -677,7 +847,63 @@ body {
       }
     }
     .btn_grp {
-      margin-bottom: 2em;
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+  }
+}
+
+.reservation_result {
+  padding: 2em 3em 3em 3em;
+  line-height: 180%;
+  margin: 0 auto 2em;
+  @include box-sizing;
+  background: #e8e8e8 url(../images/servicebg.jpg) no-repeat right top;
+  border-top: 3px solid $primaryColor;
+  letter-spacing: .08em;
+  ul,
+  ol {
+    @include li-reset;
+    li {
+      padding: .6em .5em;
+      border-bottom: 1px solid #ccc;
+      span {
+        font-weight: bold;
+        width: 120px;
+        display: inline-block;
+        color: $primaryColor;
+        &:after {
+          content: "：";
+        }
+      }
+    }
+  }
+}
+
+.reservation_result {
+  padding: 2em 3em 3em 3em;
+  line-height: 180%;
+  margin: 0 auto 2em;
+  @include box-sizing;
+  background: #e8e8e8 url(../images/servicebg.jpg) no-repeat right top;
+  border-top: 3px solid $primaryColor;
+  letter-spacing: .08em;
+  ul,
+  ol {
+    @include li-reset;
+    li {
+      padding: .6em .5em;
+      border-bottom: 1px solid #ccc;
+      span {
+        font-weight: bold;
+        width: 120px;
+        display: inline-block;
+        color: $primaryColor;
+        &:after {
+          content: "：";
+        }
+      }
     }
   }
 }

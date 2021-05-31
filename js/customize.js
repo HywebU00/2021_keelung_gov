@@ -11,26 +11,12 @@ $(function() {
     fade: true,
     lazyLoaded: true,
     lazyLoad: 'ondemand',
-    ease: 'ease'
+    ease: 'ease',
+    customPaging: function(slider, i) {
+      return $('<button type="button" />').text($(slider.$slides[i]).find('img').attr('alt').trim());
+    }
   });
-  $('.marqueeBlock ul').slick({
-    dots: false,
-    infinite: true,
-    arrow: false,
-    prevArrow: null,
-    nextArrow: null,
-    vertical: true,
-    verticalSwiping: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    pauseOnHover: true,
-    autoplaySpeed: 1500,
-    speed: 1000,
-    focusOnSelect: true,
-  });
-  $('.videoSlider').slick({
+  $('.albumSlider').slick({
     mobileFirst: true,
     dots: true,
     arrow: false,
@@ -40,7 +26,40 @@ $(function() {
     fade: true,
     lazyLoaded: true,
     lazyLoad: 'ondemand',
-    ease: 'ease'
+    ease: 'ease',
+    customPaging: function(slider, i) {
+      return $('<button type="button" />').text($(slider.$slides[i]).find('img').attr('alt').trim());
+    }
+  });
+  $('.bannerSlider').slick({
+    mobileFirst: true,
+    dots: true,
+    arrow: false,
+    infinite: true,
+    speed: 500,
+    autoplay: false,
+    fade: true,
+    lazyLoaded: true,
+    lazyLoad: 'ondemand',
+    ease: 'ease',
+    customPaging: function(slider, i) {
+      return $('<button type="button" />').text($(slider.$slides[i]).find('img').attr('alt').trim());
+    }
+  });
+  $('.videoSlider').slick({
+    mobileFirst: true,
+    dots: false,
+    arrow: false,
+    infinite: true,
+    speed: 500,
+    autoplay: false,
+    fade: true,
+    lazyLoaded: true,
+    lazyLoad: 'ondemand',
+    ease: 'ease',
+    customPaging: function(slider, i) {
+      return $('<button type="button" />').text($(slider.$slides[i]).find('img').attr('alt').trim());
+    }
   });
   // 廣告輪播
   $('.adSlider').slick({
@@ -58,7 +77,7 @@ $(function() {
     responsive: [{
       breakpoint: 1200,
       settings: {
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         arrows: true
       }
@@ -72,7 +91,7 @@ $(function() {
     }, {
       breakpoint: 575,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
         arrows: true
       }
@@ -241,4 +260,55 @@ $('.topUnits .container>ul>li:last-child>ul>li:last-child a').focusout(function(
 $('.navDep>a').click(function(e) {
   e.preventDefault();
   openuni();
+});
+// $(".topAlert>ul>li.alert>a").addClass("active");
+// $(".topAlert>ul>li.alert .alertBlock").addClass("active");
+
+$(".topAlert>ul>li>a").click(function(e) {
+  $(".topAlert>ul>li>a").removeClass("active");
+  $(".topAlert .alertBlock").removeClass("active");
+  $(this).toggleClass("active");
+  $(this).next(".alertBlock").toggleClass("active");
+  e.preventDefault();
+});
+$(".topAlert>ul>li a.alertClose").click(function() {
+  $(".topAlert>ul>li>a").removeClass("active");
+  $(".topAlert .alertBlock").removeClass("active");
+  e.preventDefault();
+});
+$(window).bind('scroll resize', function() {
+  var $window_top = $(window).scrollTop();
+  var $linkBlock_w = $(".linkBlock").width();
+  if ($window_top > 160) {
+    $('.linkBlock').css({ "top": "90px" }).stop().animate({ right: -($linkBlock_w - 40) + "px" }, 600);
+    $(".linkBlock").hover(function() {
+      $(".linkBlock").stop().animate({ right: 0 }, 600);
+    }, function() {
+      $(".linkBlock").stop().animate({ right: -($linkBlock_w - 40) + "px" }, 600);
+    });
+  } else {
+    $('.linkBlock').css({ "top": "250px" }).stop().animate({ right: 0 }, 600);
+  }
+});
+
+$(".openliveVideo").click(function(e) {
+  $(".liveVideo").fadeIn();
+  $("body").addClass("noscroll");
+  e.preventDefault();
+});
+$(".videoClose").click(function(e) {
+  $(".liveVideo").fadeOut();
+  $("body").removeClass("noscroll");
+  e.preventDefault();
+});
+$(".serviceBlock .service>a").click(function(e) {
+  $(".serviceBlock .service_detail").removeClass("active");
+  $(this).parent(".service").next(".service_detail").toggleClass("active");
+  e.preventDefault();
+});
+$(".statisticsBlock ul li a.statistics").click(function(e) {
+  $(".chart").hide();
+  $("a.statistics").removeClass("active");
+  $(this).addClass("active").next(".chart").fadeIn();
+  e.preventDefault();
 });

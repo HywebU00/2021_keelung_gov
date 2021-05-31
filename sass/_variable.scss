@@ -2,38 +2,16 @@
 // 於mixins 資料夾內，各個模組也有其個別使用的變數，請至個別檔案設定，個別使用變數不含在此設定
 //-------------------------------------------------------------顏色---------//
 $goCenter:#71c673;
-$h1Color_darken:#4b347a;
-$h1Color_lighten:#dacff0;
-$headerBg:linear-gradient(90deg, #4a3278 20%, #534f8f 80%);
 $navColor:#71c673;
-$navColor_darken: #62469a;
+$navColor_darken: #5e4795;
 $navColor_lighten:#dacff0;
-$navDep:url(../images/color/purple/icon_dep.svg) no-repeat center center;
-$navHome:url(../images/color/purple/icon_home.svg) no-repeat center center;
-$navSitemap:url(../images/color/purple/icon_sitemap.svg) no-repeat center center;
-$navMail:url(../images/color/purple/icon_mail.svg) no-repeat center center;
-$decoPic:url(../images/color/purple/decopic.png);
-$menuBg:linear-gradient(90deg, #4a3278 100%, #331e4c 100%);
+$decoPic:url(../images/mp/decopic.png);
 $menuColor:#4a3278;
 $menuHover:#71c673;
 $sliderDot:#71c673;
 $sliderDotActive:#545292;
-$blockTitle:linear-gradient(90deg, #62469a 50%, #6aa96c 50%);
-$moreColor:#71c673;
-$moreHover:#62469a;
-$tabColor:#6aa96c;
-$tabHover:#71c673;
 $tabDepColor:#62469a;
-$blockTitle2 :linear-gradient(90deg, #d27aff 50%, #6aa96c 50%);
-$serviceColor:#3e227b;
-$serviceColor2:#6aa96c;
-$serviceBg:url(../images/color/purple/bg.png);
-$serviceBg2:url(../images/color/purple/bg2.jpg);
-$serviceText:#1d236c;
 $videoColor:#d1e4c9;
-$fatfooterColor :#6aa96c;
-$fatfooterBgColor: linear-gradient(180deg, #444587 0%, #48397e 100%); //fatFooter 底色
-$footerBgColor: linear-gradient(180deg, #48397e 0%, #4a3278 100%); //fatFooter 底色
 $btnStyle1:#71c673;
 $btnStyle2:#545292;
 $text-color:#444;
@@ -43,8 +21,10 @@ $leftmenuColor:#4b347a;
 $leftmenuActive:#545292;
 $leftmenuHover:#71c673;
 // 定義顏色 此顏色可自由變換
-$primaryColor: #4b347a; //主色
-$secondaryColor: #6aa96c; //輔色
+$primaryColor: #559d38; //主色
+$primaryColorDarken:#487d27;
+$secondaryColor: #5957ab; //輔色
+$secondaryColorDarken:#4a3278;
 $lightColor: #fec003; //點綴
 $linkColor: #71c673; //連結
 $importantColor: #eb0202; //重要
