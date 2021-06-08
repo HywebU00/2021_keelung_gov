@@ -82,6 +82,11 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  transition: all 2s;
+  left: -60px;
+  &.in {
+    left: 0;
+  }
   @include screen('mobile') {
     width: 100%;
     height: 60px;
@@ -356,7 +361,9 @@
             vertical-align: middle;
           }
         }
-        &:hover {
+        &:hover,
+        &:focus,
+        &.active {
           background: $secondaryColor;
         }
       }
@@ -415,14 +422,42 @@
   }
   &:before {
     content: "";
+    width: 940px;
+    height: 131px;
+    display: block;
+    background-image: url(../images/mp/decopic5.png);
+    background-position: 0 0;
+    position: absolute;
+    left: 0;
+    z-index: 1002;
+    bottom: -60px;
+    animation-name: wave;
+    animation-duration: 100s;
+    animation-iteration-count: infinite;
+  }
+  .deco {
     width: 443px;
     height: 131px;
     display: block;
-    background: $decoPic no-repeat 0 0;
+    background: url(../images/mp/decopic4.png) no-repeat 0 0;
     position: absolute;
     left: -100px;
     z-index: 1001;
-    bottom: -42px;
+    bottom: -60px;
+    font-size: 0;
+    line-height: 100%;
+  }
+}
+
+@keyframes wave {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: -2000px 0;
+  }
+  100% {
+    background-position: 0 0;
   }
 }
 
@@ -431,21 +466,38 @@
     margin-top: 60px;
   }
   .mpSlider {
-    margin-left: 60px;
-    @include screen('mobile') {
-      margin-left: 0;
-    }
+    // margin-left: 60px;
+    // @include screen('mobile') {
+    //   margin-left: 0;
+    // }
     .img-container {
-      @include aspect-ratio(1140,
+      @include aspect-ratio(1200,
       663);
     }
     .slick-dots {
       bottom: 25px;
       height: 18px;
+      z-index: 1003;
+      li {
+        button {
+          background: #fff;
+          opacity: 1;
+          &:hover,
+          &:focus {
+            background: #71c673;
+          }
+        }
+        &.slick-active button {
+          background: #545292;
+        }
+      }
     }
     .slick-prev,
     .slick-next {
       top: 45%;
+    }
+    .slick-prev {
+      left: 70px;
     }
   }
 }
@@ -547,7 +599,7 @@
 }
 
 .infoBlock {
-  padding: 3rem 0 115px 0;
+  padding: 3.5rem 0 115px 0;
   flex-basis: 100%;
   clear: both;
   position: relative;
@@ -557,8 +609,18 @@
   @include screen('mobile') {
     padding: 30px 0;
   }
-  &:after {
-    content: "";
+  // &:after {
+  //   content: "";
+  //   width: 443px;
+  //   height: 131px;
+  //   display: block;
+  //   background: $decoPic no-repeat 0 0;
+  //   position: absolute;
+  //   right: -100px;
+  //   z-index: 10;
+  //   bottom: 40px;
+  // }
+  .deco {
     width: 443px;
     height: 131px;
     display: block;
@@ -567,6 +629,8 @@
     right: -100px;
     z-index: 10;
     bottom: 40px;
+    font-size: 0;
+    line-height: 100%;
   }
   .blockTitle {
     text-align: right;
@@ -831,7 +895,7 @@
           font-size: 1.0625rem;
           padding: .5rem 1.2rem;
           background: transparent;
-          transition: all .5s;
+          // transition: all .5s;
           @include screen('mobile') {
             font-size: 1.25rem;
             padding: 1rem;
@@ -890,14 +954,10 @@
             }
             .news_dep {
               display: inline-block;
-              margin-left: -5px;
-              a {
-                margin: 0;
-                padding: 0 14px;
-                color: #fff;
-                background: #000;
-                display: block;
-              }
+              margin: 0 0 0 -5px;
+              padding: 0 14px;
+              color: #fff;
+              background: #000;
             }
           }
         }
@@ -929,8 +989,18 @@
   width: 100%;
   clear: both;
   position: relative;
-  &:before {
-    content: "";
+  // &:before {
+  //   content: "";
+  //   width: 443px;
+  //   height: 131px;
+  //   display: block;
+  //   background: $decoPic no-repeat 0 0;
+  //   position: absolute;
+  //   right: -180px;
+  //   z-index: 9;
+  //   bottom: 15px;
+  // }
+  .deco {
     width: 443px;
     height: 131px;
     display: block;
@@ -939,6 +1009,8 @@
     right: -180px;
     z-index: 9;
     bottom: 15px;
+    font-size: 0;
+    line-height: 100%;
   }
   @include screen('mobile') {
     padding: 30px 30px 60px 30px;
@@ -975,8 +1047,10 @@
   padding: 3rem 60px;
   width: 100%;
   position: relative;
+  margin-top: 2rem;
   @media screen and (max-width: 1200px) {
     padding: 0 0 3rem 0;
+    margin-top: 0;
   }
   @include screen('mobile') {
     padding: 0 0 2rem 0;
@@ -1085,7 +1159,8 @@
               top: .5rem;
             }
           }
-          &:hover {
+          &:hover,
+          &:focus {
             background: $secondaryColor;
             .service_pic {
               &:before {
@@ -1213,8 +1288,18 @@
   @media screen and (max-width: 850px) {
     margin-top: 40px;
   }
-  &:before {
-    content: "";
+  // &:before {
+  //   content: "";
+  //   width: 443px;
+  //   height: 131px;
+  //   display: block;
+  //   background: $decoPic no-repeat 0 0;
+  //   position: absolute;
+  //   right: -80px;
+  //   z-index: 10;
+  //   bottom: -75px;
+  // }
+  .deco {
     width: 443px;
     height: 131px;
     display: block;
@@ -1223,6 +1308,8 @@
     right: -80px;
     z-index: 10;
     bottom: -75px;
+    font-size: 0%;
+    line-height: 100%;
   }
   &:after {
     content: "";

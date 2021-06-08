@@ -17,7 +17,7 @@
       a {
         line-height: 40px;
         padding: 0 1em 0 2.5em;
-        background: $btnStyle1 url(../images/color/icon_search.svg) no-repeat 16px center;
+        background: $btnStyle1 url(../images/icon_search.svg) no-repeat 16px center;
         background-size: 16px;
         color: #222;
         display: block;
@@ -26,7 +26,7 @@
         font-weight: 500;
         &:hover,
         &:focus {
-          background: $btnStyle2 url(../images/color/icon_search_.svg) no-repeat 16px center;
+          background: $btnStyle2 url(../images/icon_search_.svg) no-repeat 16px center;
           background-size: 16px;
           box-shadow: none;
           color: #fff;
