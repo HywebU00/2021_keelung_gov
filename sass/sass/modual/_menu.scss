@@ -5,7 +5,7 @@
   top: 48px;
   z-index: 9;
   @include screen('tablet') {
-    right: 30px;
+    right: 0;
   }
   @include screen('mobile') {
     display: none;
