@@ -489,7 +489,7 @@
     // }
     .img-container {
       @include aspect-ratio(1200,
-      663);
+        663);
     }
     .slick-dots {
       bottom: 25px;
@@ -626,7 +626,7 @@
   flex-basis: 100%;
   clear: both;
   position: relative;
-  z-index: 1004;
+  z-index: 9;
   @media screen and (max-width: 900px) {
     padding: 30px 0 80px 0;
   }
@@ -770,7 +770,7 @@
   .albumSlider {
     .img-container {
       @include aspect-ratio(540,
-      364);
+        364);
     }
     .albumSlider_text {
       position: absolute;
@@ -1059,7 +1059,7 @@
     }
     .img-container {
       @include aspect-ratio(709,
-      283);
+        283);
     }
     .slick-dots {
       bottom: -30px;
@@ -1298,7 +1298,7 @@
   .videoSlider {
     .img-container {
       @include aspect-ratio(540,
-      310);
+        310);
     }
     .caption {}
     .slick-dots {
@@ -1556,7 +1556,7 @@
         }
         .img-container {
           @include aspect-ratio(520,
-          336);
+            336);
           a {}
         }
         .more {}

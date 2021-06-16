@@ -75,6 +75,9 @@ body {
     line-height: 1.25em;
     margin: 1.8em 0 .4em 0;
     color: #4a3278;
+    @include screen('mobile') {
+      margin: 0 0 .4em 0;
+    }
   }
 }
 
@@ -82,6 +85,9 @@ body {
   width: 100%;
   height: 300px;
   position: relative;
+  @include screen('mobile') {
+    display: none;
+  }
   img {
     width: 100%;
     height: 300px;
@@ -113,6 +119,12 @@ body {
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
   padding: 14px 60px 20px 60px;
+  @include screen('tablet') {
+    padding: 14px 30px 20px 30px;
+  }
+  @include screen('mobile') {
+    padding: 70px 30px 20px 30px;
+  }
   >.container {
     .accesskey {
       left: -30px;
@@ -333,6 +345,7 @@ body {
         @include screen('mobile') {
           flex: 1 1 100%;
           text-align: left;
+          max-width: 100%;
         }
       }
       .form_content {
@@ -342,6 +355,7 @@ body {
         flex-basis: calc(100% - 200px);
         @include screen('mobile') {
           flex: 1 1 100%;
+          max-width: 100%;
         }
         input {
           margin-left: 0;
@@ -487,6 +501,10 @@ body {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  @include screen('mobile') {
+    width: 100%;
+    padding-bottom: 1rem;
+  }
   ul {
     @include li-reset;
     li {
@@ -574,6 +592,12 @@ body {
     @include box-sizing;
     background: #e8e8e8 url(../images/servicebg.jpg) no-repeat right top;
     border-top: 3px solid $primaryColor;
+    @include screen('mobile') {
+      padding: 1.5rem
+    }
+    p{
+      margin-top: 0;
+    }
     .form_grid {
       border-top: 1px solid #ccc;
     }
@@ -593,6 +617,9 @@ body {
   line-height: 170%;
   letter-spacing: .08em;
   margin-bottom: 2em;
+  @include screen('mobile') {
+    padding: 1.5rem
+  }
   h3 {
     margin-top: 0;
     padding-bottom: 10px;
@@ -683,6 +710,8 @@ body {
         flex: 0 0 22%;
         @include screen('mobile') {
           width: 100%;
+          max-width: 100%;
+          flex: 0 0 100%;
         }
       }
       .form_content {
@@ -690,6 +719,8 @@ body {
         flex: 0 0 78%;
         @include screen('mobile') {
           width: 100%;
+          max-width: 100%;
+          flex: 0 0 100%;
         }
         .form_grp {
           border-bottom: 1px dashed #ccc!important;
@@ -708,6 +739,11 @@ body {
           min-width: 50%;
           margin-left: 0;
           margin-top: 0;
+          @include screen('mobile') {
+            width: 100%;
+            max-width: 100%;
+            flex: 0 0 100%;
+          }
         }
         a.send {
           display: inline-block;
@@ -724,6 +760,9 @@ body {
           transition: all .5s;
           position: relative;
           background: #fff;
+          @include screen('mobile') {
+            margin: 0 0em .3em 0;
+          }
           &:before {
             content: "";
             width: 28px;
@@ -889,6 +928,9 @@ body {
   background: #e8e8e8 url(../images/servicebg.jpg) no-repeat right top;
   border-top: 3px solid $primaryColor;
   letter-spacing: .08em;
+  @include screen('mobile') {
+    padding: 1.5rem!important;
+  }
   ul,
   ol {
     @include li-reset;

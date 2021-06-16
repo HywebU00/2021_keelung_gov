@@ -280,6 +280,9 @@ $(".topAlert>ul>li a.alertClose").click(function() {
   $(".topAlert .alertBlock").removeClass("active");
   e.preventDefault();
 });
+if($(".topAlert>ul>li.alert")) {
+  $(".topAlert>ul>li.alert>a").trigger('click');
+}
 $(window).scroll(function() {
   var $window_top = $(window).scrollTop();
   var $linkBlock_w = $(".linkBlock").width();

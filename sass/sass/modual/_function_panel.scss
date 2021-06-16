@@ -10,9 +10,14 @@
   @include screen('mobile') {
     margin: .6em 0;
     padding: .5em 0 .5em;
+    text-align: center;
   }
   .adSearch {
     float: left;
+    @include screen('mobile') {
+      float: none;
+      margin-bottom: 1rem;
+    }
     .adSearch_btn {
       a {
         line-height: 40px;
@@ -53,6 +58,9 @@
         }
         .form_title {
           padding-top: 10px;
+          @include screen('mobile') {
+            text-align: left;
+          }
         }
         .form_content {
           text-align: left;

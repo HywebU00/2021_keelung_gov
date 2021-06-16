@@ -43,6 +43,9 @@
     margin-top: .5em;
     margin-bottom: 1rem;
     border-top: 3px solid $primaryColor;
+    p{
+      margin-bottom: 0;
+    }
   }
   img {
     &.float_left {
@@ -117,6 +120,7 @@
       border-left: 4px solid $tabDepColor;
       @include screen('mobile') {
         padding: 10px 20px;
+        background: #f1f1f1 ;
       }
     }
   }
@@ -149,6 +153,7 @@
 //  slick燈箱
 .lightbox_slider {
   clear: both;
+  margin: 0 auto 3em;
   .cp_slider {
     @include gutter(0);
   }
@@ -316,7 +321,7 @@
     }
   }
   li {
-    flex: 1 1 calc(100% / 4);
+    flex: 1 1 auto;
     color: #fff;
     @include screen('tablet') {
       flex: 1 1 calc(100% / 2);

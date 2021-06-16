@@ -9,6 +9,9 @@
   top: 0;
   background: rgba(0, 0, 0, .4);
   @extend %clearfix;
+  @include screen('tablet') {
+    height: 100px;
+  }
   @include screen('mobile') {
     position: fixed;
     width: 100%;
@@ -91,8 +94,11 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 2.125rem;
+    @media screen and (max-width: 1124px) {
+      margin: 25px 0 0 70px;
+    }
     @include screen('tablet') {
-      margin: 30px 0 20px 70px;
+      margin: 8px 0 20px 70px;
     }
     @include screen('mobile') {
       margin: 0 auto;
@@ -114,8 +120,11 @@
     display: flex;
     margin-right: 200px;
     margin-top: 10px;
+    @media screen and (max-width: 1124px) {
+      margin-right: 180px;
+    }
     @include screen('tablet') {
-      margin-top: 10px;
+      margin-top: 12px;
       margin-right: 84px;
     }
     @include screen('mobile') {
@@ -235,7 +244,7 @@
   right: 90px;
   @include screen('tablet') {
     right: 50px;
-    top: 10px;
+    top: 12px;
   }
   @include screen('mobile') {
     display: none;
@@ -355,7 +364,7 @@
   right: 0;
   @include screen('tablet') {
     right: 12px;
-    top: 10px;
+    top: 12px;
   }
   @include screen('mobile') {
     display: none;
