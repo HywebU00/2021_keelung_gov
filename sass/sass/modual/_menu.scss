@@ -4,6 +4,7 @@
   right: 200px;
   top: 48px;
   z-index: 9;
+  width: 60%;
   @media screen and (max-width: 1124px) {
     right: 180px;
   }
@@ -11,6 +12,7 @@
     right: 0;
     left: 60px;
     top: 56px;
+    width: 100%;
   }
   @include screen('mobile') {
     display: none;
