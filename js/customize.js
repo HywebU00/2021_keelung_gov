@@ -275,12 +275,12 @@ $(".topAlert>ul>li>a").click(function(e) {
   $(this).next(".alertBlock").toggleClass("active");
   e.preventDefault();
 });
-$(".topAlert>ul>li a.alertClose").click(function() {
+$(".topAlert>ul>li a.alertClose").click(function(e) {
   $(".topAlert>ul>li>a").removeClass("active");
   $(".topAlert .alertBlock").removeClass("active");
   e.preventDefault();
 });
-if($(".topAlert>ul>li.alert")) {
+if ($(".topAlert>ul>li.alert")) {
   $(".topAlert>ul>li.alert>a").trigger('click');
 }
 $(window).scroll(function() {
