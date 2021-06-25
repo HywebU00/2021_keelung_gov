@@ -137,6 +137,7 @@ body {
     max-width: 100%;
     // overflow: hidden;
     padding-bottom: 3rem;
+    width: 100%;
   }
   .left_block {
     flex: 0 0 260px;
@@ -152,6 +153,7 @@ body {
     }
     +.center_block {
       max-width: calc(100% - 300px);
+      width: auto;
     }
     @include screen('tablet') {
       display: none;
@@ -595,7 +597,7 @@ body {
     @include screen('mobile') {
       padding: 1.5rem
     }
-    p{
+    p {
       margin-top: 0;
     }
     .form_grid {
@@ -944,6 +946,31 @@ body {
         color: $primaryColor;
         &:after {
           content: "：";
+        }
+      }
+    }
+  }
+}
+
+.consultant {
+  border-top: 4px solid #559d38;
+  padding-top: 10px;
+  ul {
+    @include li-reset;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    li {
+      // flex: 1 1 8%;
+      // padding: 4px;
+      @include flex-col-equal(12, 0px, 6px);
+      padding: 4px;
+      a {
+        text-decoration: underline;
+        &:hover,
+        &:focus {
+          text-decoration: none;
         }
       }
     }

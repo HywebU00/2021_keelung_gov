@@ -92,6 +92,7 @@
     height: 60px;
     flex-direction: row;
     z-index: 1005;
+    transition: none;
   }
   &:before {
     content: "";
@@ -489,7 +490,7 @@
     // }
     .img-container {
       @include aspect-ratio(1200,
-        663);
+      663);
     }
     .slick-dots {
       bottom: 25px;
@@ -523,9 +524,6 @@
 }
 
 .liveVideoBlock {
-  @include screen('mobile') {
-    display: none;
-  }
   .openliveVideo {
     position: absolute;
     right: 0;
@@ -542,6 +540,15 @@
     @include screen('tablet') {
       width: 200px;
     }
+    @include screen('mobile') {
+      position: relative;
+      width: 100%;
+      bottom: auto;
+      height: 50px;
+      line-height: 50px;
+      padding-left: 60px;
+      border-bottom: 1px solid #222;
+    }
     &:before {
       content: "";
       width: 20px;
@@ -553,6 +560,10 @@
       top: 25px;
       border: 1px solid #090909;
       transition: all .5s;
+      @include screen('mobile') {
+        top: 16px;
+        left: 20px;
+      }
     }
     &:after {
       content: "";
@@ -564,6 +575,10 @@
       position: absolute;
       left: 39px;
       top: 32px;
+      @include screen('mobile') {
+        top: 23px;
+        left: 29px;
+      }
     }
     &:hover,
     &:focus {
@@ -770,7 +785,7 @@
   .albumSlider {
     .img-container {
       @include aspect-ratio(540,
-        364);
+      364);
     }
     .albumSlider_text {
       position: absolute;
@@ -1059,7 +1074,7 @@
     }
     .img-container {
       @include aspect-ratio(709,
-        283);
+      283);
     }
     .slick-dots {
       bottom: -30px;
@@ -1298,7 +1313,7 @@
   .videoSlider {
     .img-container {
       @include aspect-ratio(540,
-        310);
+      310);
     }
     .caption {}
     .slick-dots {
@@ -1556,7 +1571,7 @@
         }
         .img-container {
           @include aspect-ratio(520,
-            336);
+          336);
           a {}
         }
         .more {}
