@@ -1378,6 +1378,8 @@
     @include screen('mobile') {
       left: -30px;
       right: -30px;
+      background: #d1e4c9 url(../images/mp/decopic3.png) no-repeat 0 -10px;
+      background-size: 100%;
     }
   }
   .magazine_pic {

@@ -12,7 +12,7 @@
     right: 0;
     left: 60px;
     top: 56px;
-    width: 100%;
+    width: calc(100% - 60px);
   }
   @include screen('mobile') {
     display: none;
@@ -33,7 +33,7 @@
     @include screen('tablet') {
       margin-left: 0;
       padding: 0;
-      justify-content: center;
+      // justify-content: center;
     }
     >li {
       flex: 0 1 16%;
