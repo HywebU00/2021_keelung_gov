@@ -7,6 +7,10 @@
   }
 }
 
+.header .navigation .navlist>ul>li.navEn>a:before {
+  content: "中";
+}
+
 .menu>ul>li {
   flex: 1 0 auto;
 }
