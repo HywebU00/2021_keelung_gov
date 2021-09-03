@@ -491,6 +491,7 @@
     .img-container {
       @include aspect-ratio(1200,
       663);
+      line-height: 0;
     }
     .slick-dots {
       bottom: 25px;

@@ -326,3 +326,29 @@ $(".statisticsBlock ul li a.statistics").click(function(e) {
   $(this).addClass("active").next(".chart").fadeIn();
   e.preventDefault();
 });
+
+$(function() {
+  $('.left_block ul>li>a').each(function() {
+    $(".left_block ul ul").hide();
+    $(".left_block ul ul li a.active").parent('li').parent('ul').show();
+
+    function leftnav(e) {
+      $(this).parent('li').siblings().children('a').removeClass('active');
+      $(this).toggleClass('active');
+      $(this).parent('li').siblings().children('ul').slideUp();
+      $(this).next('ul').slideToggle();
+      if ($(this).parent().find('ul').length > 0)
+        e.preventDefault();
+    }
+    $(this).click(leftnav);
+    $(this).keyup(leftnav);
+  });
+});
+$(function() {
+  var ww = $(window).outerWidth();
+  if (ww <= 768) {
+    $(".left_block .left_title").click(function(e) {
+      $(this).next("ul").slideToggle();
+    });
+  } else {}
+});
