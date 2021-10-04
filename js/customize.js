@@ -16,6 +16,21 @@ $(function() {
       return $('<button type="button" />').text($(slider.$slides[i]).find('img').attr('alt').trim());
     }
   });
+  $('.topSlider ul').slick({
+    mobileFirst: true,
+    dots: true,
+    arrow: false,
+    infinite: true,
+    speed: 500,
+    autoplay: false,
+    fade: true,
+    lazyLoaded: true,
+    lazyLoad: 'ondemand',
+    ease: 'ease',
+    customPaging: function(slider, i) {
+      return $('<button type="button" />').text($(slider.$slides[i]).find('img').attr('alt').trim());
+    }
+  });
   $('.albumSlider').slick({
     mobileFirst: true,
     dots: true,
@@ -315,6 +330,18 @@ $(".videoClose").click(function(e) {
   $("body").removeClass("noscroll");
   e.preventDefault();
 });
+$(".opentopSlider").click(function(e) {
+  $(".topSlider").fadeIn();
+  $('.topSlider ul').get(0).slick.setPosition();
+  $("body").addClass("noscroll");
+  e.preventDefault();
+});
+$(".topSliderClose").click(function(e) {
+  $(".topSlider").fadeOut();
+  $("body").removeClass("noscroll");
+  e.preventDefault();
+});
+
 $(".serviceBlock .service>a").click(function(e) {
   $(".serviceBlock .service_detail").removeClass("active");
   $(this).parent(".service").next(".service_detail").toggleClass("active");
