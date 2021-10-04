@@ -605,9 +605,10 @@
     ul.slick-slider {
       @include li-reset;
       position: relative;
-      margin: 30px 15%;
+      margin: 40px auto;
+      max-width: 600px;
       @include screen('mobile') {
-        margin: 15px;
+        margin: 30px 15px;
       }
       li {
         .img-container {
