@@ -591,25 +591,27 @@
   .topSlider {
     display: none;
     content: "";
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, .9);
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 1007;
-    overflow-y: scroll;
+    width: 340px;
+    height: auto;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    right: 80px;
+    top: 110px;
+    z-index: 1003;
     // padding: 30px 15%;
     // box-sizing: border-box;
+    @include screen('mobile') {
+      right: 0;
+      top: 60px;
+      width: 100%;
+    }
     ul.slick-slider {
       @include li-reset;
       position: relative;
-      margin: 40px auto;
+      margin: 4px 4px 40px 4px;
       max-width: 1000px;
       @include screen('mobile') {
-        margin: 30px 15px;
+        margin: 4px 4px 40px 4px;
       }
       li {
         .img-container {
@@ -626,29 +628,31 @@
       bottom: -20px;
     }
     .slick-prev {
-      left: -46px;
-      @include screen('mobile') {
-        left: 10px;
-      }
+      left: 0;
     }
     .slick-next {
-      right: -46px;
-      @include screen('mobile') {
-        right: 10px;
-      }
+      right: 0;
     }
     .topSliderClose {
       font-size: 0;
       line-height: 100%;
       position: absolute;
-      right: 20px;
-      top: 20px;
+      right: -48px;
+      top: 0;
       width: 48px;
       height: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all .5s;
+      background: rgba(0, 0, 0, 0.9);
+      @include screen('mobile') {
+        top: auto;
+        bottom: -36px;
+        right: 0;
+        width: 36px;
+        height: 36px;
+      }
       &:before {
         content: "";
         width: 30px;
@@ -656,10 +660,15 @@
         display: block;
         background: url(../images/basic/icon_close.svg) no-repeat center center;
         background-size: 30px;
+        @include screen('mobile') {
+          width: 24px;
+          height: 24px;
+          background-size: 24px;
+        }
       }
       &:hover,
       &:focus {
-        background: rgba(0, 0, 0, .3);
+        background: $secondaryColor;
       }
     }
   }
@@ -1747,6 +1756,7 @@
   margin: 4.375rem 0;
   overflow: hidden;
   @extend %clearfix;
+  width: 100%;
   @include screen('mobile') {
     margin: 700px 0 0 0;
   }
