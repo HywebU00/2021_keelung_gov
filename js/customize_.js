@@ -257,10 +257,6 @@ $(function() {
       $(this).keyup(qa);
     });
   });
-  
-  if ($(".topSliderBlock")) {
-    $(".topSliderBlock>a.opentopSlider").trigger('click');
-  }
 });
 
 function openuni() {
@@ -367,6 +363,7 @@ $(".statisticsBlock ul li a.statistics").click(function(e) {
   $(this).addClass("active").next(".chart").fadeIn();
   e.preventDefault();
 });
+
 $(function() {
   $('.left_block ul>li>a').each(function() {
     $(".left_block ul ul").hide();
