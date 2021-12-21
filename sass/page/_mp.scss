@@ -611,7 +611,7 @@
       margin: 4px 4px 40px 4px;
       max-width: 1000px;
       @include screen('mobile') {
-        margin: 4px 4px 40px 4px;
+        margin: 4px 4px 60px 4px;
       }
       li {
         .img-container {
@@ -626,6 +626,10 @@
     }
     .slick-dots {
       bottom: -20px;
+      @include screen('mobile') {
+        justify-content: flex-start;
+        bottom: -28px;
+      }
     }
     .slick-prev {
       left: 0;
@@ -646,13 +650,6 @@
       justify-content: center;
       transition: all .5s;
       background: rgba(0, 0, 0, 0.9);
-      @include screen('mobile') {
-        top: auto;
-        bottom: -36px;
-        right: 0;
-        width: 36px;
-        height: 36px;
-      }
       &:before {
         content: "";
         width: 30px;
@@ -660,11 +657,19 @@
         display: block;
         background: url(../images/basic/icon_close.svg) no-repeat center center;
         background-size: 30px;
-        @include screen('mobile') {
-          width: 24px;
-          height: 24px;
-          background-size: 24px;
-        }
+        // @include screen('mobile') {
+        //   width: 24px;
+        //   height: 24px;
+        //   background-size: 24px;
+        // }
+      }
+      @include screen('mobile') {
+        top: auto;
+        bottom: 5px;
+        right: 5px;
+        // width: 36px;
+        // height: 36px;
+        background: transparent;
       }
       &:hover,
       &:focus {
@@ -796,6 +801,7 @@
   clear: both;
   position: relative;
   z-index: 9;
+  display: none;
   @media screen and (max-width: 900px) {
     padding: 30px 0 80px 0;
   }
@@ -1624,7 +1630,7 @@
           width: 100%;
           background: #d6e4cd;
           align-items: center;
-          height: 80px;
+          height: 90px;
         }
         &:before {
           content: "";
@@ -1758,14 +1764,17 @@
   @extend %clearfix;
   width: 100%;
   @include screen('mobile') {
-    margin: 700px 0 0 0;
+    margin: 0;
   }
-  @media screen and (max-width: 600px) {
-    margin: 580px 0 0 0;
-  }
-  @media screen and (max-width: 500px) {
-    margin: 450px 0 0 0;
-  }
+  // @include screen('mobile') {
+  //   margin: 700px 0 0 0;
+  // }
+  // @media screen and (max-width: 600px) {
+  //   margin: 580px 0 0 0;
+  // }
+  // @media screen and (max-width: 500px) {
+  //   margin: 450px 0 0 0;
+  // }
   .adSlider {
     padding: 0 40px;
     .slick-prev {
