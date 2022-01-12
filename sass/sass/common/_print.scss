@@ -31,7 +31,9 @@
   .cp {
     @include gutter(0);
   }
-  h3:before {
+  h3:before,
+  div.tag:before,
+  .function_panel {
     display: none!important;
   }
   .inner_img {
