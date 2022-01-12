@@ -133,11 +133,12 @@ body {
     }
   }
   .center_block {
-    flex: auto;
-    max-width: 100%;
+    // flex: auto;
+    // max-width: 100%;
     // overflow: hidden;
     padding-bottom: 3rem;
     width: 100%;
+    display: block;
   }
   .left_block {
     flex: 0 0 260px;
