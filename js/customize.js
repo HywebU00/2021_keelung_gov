@@ -232,6 +232,7 @@ $(function() {
     }
   });
 });
+
 $(".adSearch_btn").click(function(e) {
   $(".adSearch_form").slideToggle();
   e.preventDefault();
@@ -257,7 +258,7 @@ $(function() {
       $(this).keyup(qa);
     });
   });
-  
+
   if ($(".topSliderBlock")) {
     $(".topSliderBlock>a.opentopSlider").trigger('click');
   }
@@ -284,24 +285,28 @@ $('.navDep>a').click(function(e) {
   e.preventDefault();
   openuni();
 });
-// $(".topAlert>ul>li.alert>a").addClass("active");
-// $(".topAlert>ul>li.alert .alertBlock").addClass("active");
-$(".topAlert").addClass("in");
-$(".topAlert>ul>li>a").click(function(e) {
-  $(".topAlert>ul>li>a").removeClass("active");
-  $(".topAlert .alertBlock").removeClass("active");
-  $(this).toggleClass("active");
-  $(this).next(".alertBlock").toggleClass("active");
-  e.preventDefault();
-});
-$(".topAlert>ul>li a.alertClose").click(function(e) {
-  $(".topAlert>ul>li>a").removeClass("active");
-  $(".topAlert .alertBlock").removeClass("active");
-  e.preventDefault();
+$('.topAlert li').each(function() {
+  var _alertItem = $(this).children('a');
+  _alertItem.each(function() {
+    function alertBlock(e) {
+      $(this).parent('li').siblings("li").children('a').removeClass('active');
+      $(this).toggleClass('active');
+      $(this).parent('li').siblings("li").children('.alertBlock').removeClass('active');
+      $(this).next('.alertBlock').toggleClass("active");
+      e.preventDefault();
+    }
+    $(this).click(alertBlock);
+    $(this).keyup(alertBlock);
+  });
 });
 if ($(".topAlert>ul>li.alert")) {
+  $(".topAlert").addClass("in");
   $(".topAlert>ul>li.alert>a").trigger('click');
-}
+};
+$(".topAlert>ul>li:last-child .alertClose").focusout(function() {
+  $(this).parents(".alertBlock").removeClass('active');
+  $(this).parents(".alertBlock").siblings("a").removeClass('active');
+});
 // $(window).scroll(function() {
 //   var $window_top = $(window).scrollTop();
 //   var $linkBlock_w = $(".linkBlock").width();

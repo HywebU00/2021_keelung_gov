@@ -28,7 +28,7 @@
   margin-top: 1.5rem;
   font-weight: 500;
   a {
-    color: $primaryColor;
+    color: #3b7822;
     border: 1px solid $primaryColor;
     background: #e5f1dd;
     line-height: 3rem;
@@ -226,6 +226,7 @@
           align-items: center;
           justify-content: center;
           transition: all .5s;
+          background: transparent;
           @include screen('mobile') {
             right: 0;
             top: auto;
