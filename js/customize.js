@@ -307,6 +307,11 @@ $(".topAlert>ul>li:last-child .alertClose").focusout(function() {
   $(this).parents(".alertBlock").removeClass('active');
   $(this).parents(".alertBlock").siblings("a").removeClass('active');
 });
+$(".alertClose").click(function(e) {
+  $(this).parents(".alertBlock").removeClass('active');
+  $(this).parents(".alertBlock").siblings("a").removeClass('active');
+  e.preventDefault();
+});
 // $(window).scroll(function() {
 //   var $window_top = $(window).scrollTop();
 //   var $linkBlock_w = $(".linkBlock").width();

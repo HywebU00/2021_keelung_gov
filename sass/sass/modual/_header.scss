@@ -306,8 +306,8 @@
         border-radius: 6px;
         &[type="text"] {
           &:focus {
-            border: 1px solid $aFocus;
-            box-shadow: 0 0px 0px 1px $aFocus !important;
+            border: 1px solid #ff8205;
+            box-shadow: 0 0px 0px 1px #ff8205 !important;
           }
         }
         &[type="submit"] {
