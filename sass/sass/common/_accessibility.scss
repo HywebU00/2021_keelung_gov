@@ -8,11 +8,10 @@ a:focus {
   }
 }
 
-a:focus:not(:focus-visible) {
-  outline: 0;
-  box-shadow: none;
-}
-
+// a:focus:not(:focus-visible) {
+//   outline: 0;
+//   box-shadow: none;
+// }
 // 導盲磚
 .accesskey {
   position: absolute;
