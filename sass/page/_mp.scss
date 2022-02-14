@@ -758,7 +758,7 @@
     top: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1007;
+    z-index: 1009;
     background: rgba(0, 0, 0, .9);
     .video-container {
       position: relative;
@@ -767,6 +767,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      iframe {
+        width: 560px;
+        height: 315px;
+        @include screen('mobile') {
+          width: 90%;
+          height: 240px;
+        }
+      }
     }
     .videoClose {
       font-size: 0;
