@@ -1,15 +1,19 @@
-$form_title_width :150px; // 表單title寬度
-@mixin formStyle($f_color:$color-word, $f_border:$color-gray, $f_radius:$btn-radius) {
+$form_title_width: 150px; // 表單title寬度
+@mixin formStyle(
+  $f_color: $color-word,
+  $f_border: $color-gray,
+  $f_radius: $btn-radius
+) {
   color: $f_color;
   font-size: 1rem;
   border: 1px solid $f_border;
-  padding: .5rem;
+  padding: 0.5rem;
   background: #fff;
   vertical-align: middle;
-  margin: .3rem;
+  margin: 0.3rem;
   box-sizing: border-box;
   border-radius: 2px;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
   // @include screen('mobile') {
   //     margin: 0 0 .3em 0;
   // }
@@ -46,29 +50,29 @@ select::-ms-expand {
 
 // 表單必填
 .necessary {
-  font-size: .875em;
+  font-size: 0.875em;
   color: #d00000;
   padding: 1px 6px;
   border-radius: 2px;
   margin: 0 6px;
   vertical-align: middle;
   box-shadow: 0 0 0 1px #d00000 inset;
-  @include screen('mobile') {
+  @include screen("mobile") {
     margin: 0 6px 0 0;
   }
 }
 
 .form_grid {
-  border-top: 1px solid #DDD;
+  border-top: 1px solid #ddd;
   .form_grp {
-    border-bottom: 1px dashed #DDD;
-    padding: .5em 0;
+    border-bottom: 1px dashed #ddd;
+    padding: 0.5em 0;
   }
 }
 
 .flex-form {
-  font-size: .938em;
-  margin: .5em;
+  font-size: 0.938em;
+  margin: 0.5em;
   .form_grp {
     display: flex;
     //overflow: hidden;
@@ -79,7 +83,7 @@ select::-ms-expand {
       label {
         float: left;
         width: auto;
-        margin: 0 .5em .5em 0;
+        margin: 0 0.5em 0.5em 0;
       }
     }
   }
@@ -90,13 +94,13 @@ select::-ms-expand {
     @include gutter();
     padding-top: 5px;
     //white-space: nowrap;
-    @include screen('mobile') {
-      max-width: calc(100% - .6em);
-      flex-basis: calc(100% - .6em);
-      margin: 0 .3em .5em;
+    @include screen("mobile") {
+      max-width: calc(100% - 0.6em);
+      flex-basis: calc(100% - 0.6em);
+      margin: 0 0.3em 0.5em;
       @include gutter(0);
     }
-    +.form_content {
+    + .form_content {
       &.form_col-6-6,
       &.form_col-4-4-4,
       &.form_col-3-3-3-3,
@@ -114,7 +118,7 @@ select::-ms-expand {
         max-width: calc(100% - #{$form_title_width});
         padding-top: 0;
         @include gutter();
-        @include screen('mobile') {
+        @include screen("mobile") {
           flex-basis: 100%;
           max-width: 100%;
           @include gutter(0);
@@ -134,13 +138,13 @@ select::-ms-expand {
     overflow: hidden;
     flex-wrap: wrap;
     @include gutter();
-    @include screen('mobile') {
+    @include screen("mobile") {
       max-width: 100%;
       flex-basis: 100%;
       @include gutter(0);
     }
     *[class^="notice"] {
-      margin: 0 .3em .3em .3em;
+      margin: 0 0.3em 0.3em 0.3em;
     }
     //有條件式表單
     &.additional {
@@ -170,76 +174,76 @@ select::-ms-expand {
       flex-basis: 100%;
       max-width: 100%;
       @include gutter(0);
-      >.form_grp {
+      > .form_grp {
         border-bottom: 0;
         padding-top: 0;
       }
       label {
-        @include gutter(.6em);
+        @include gutter(0.6em);
         padding-top: 5px;
       }
-      @include screen('mobile') {
+      @include screen("mobile") {
         @include gutter();
       }
     }
     &.form_col-6-6 {
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         flex-basis: 50%;
         width: 50%;
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           flex-basis: 100%;
           width: 100%;
         }
       }
     }
     &.form_col-4-4-4 {
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         flex-basis: calc(100% / 3);
         width: calc(100% / 3);
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           flex-basis: 100%;
           width: 100%;
         }
       }
     }
     &.form_col-3-3-3-3 {
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         flex-basis: 25%;
         width: 25%;
-        @include screen('mobile') {
+        @include screen("mobile") {
           flex-basis: 50%;
           width: 100%;
         }
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           flex-basis: 100%;
           width: 100%;
         }
       }
     }
     &.form_col-3-9 {
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         flex-basis: 25%;
         width: 25%;
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           flex-basis: 100%;
           width: 100%;
         }
       }
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         &:nth-child(2) {
           flex-basis: 75%;
           width: 75%;
-          @include screen('xs_mobile') {
+          @include screen("xs_mobile") {
             flex-basis: 100%;
             width: 100%;
           }
@@ -247,23 +251,23 @@ select::-ms-expand {
       }
     }
     &.form_col-9-3 {
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         flex-basis: 75%;
         width: 75%;
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           flex-basis: 100%;
           width: 100%;
         }
       }
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         &:nth-child(2) {
           flex-basis: 25%;
           width: 25%;
-          @include screen('xs_mobile') {
+          @include screen("xs_mobile") {
             flex-basis: 100%;
             width: 100%;
           }
@@ -271,83 +275,83 @@ select::-ms-expand {
       }
     }
     &.form_col-3-3-6 {
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         flex-basis: 25%;
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           flex-basis: 50%;
         }
       }
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         &:last-child {
           flex-basis: 50%;
-          @include screen('xs_mobile') {
+          @include screen("xs_mobile") {
             flex-basis: 100%;
           }
         }
       }
     }
     &.form_col-6-3-3 {
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         flex-basis: 25%;
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           flex-basis: 50%;
         }
       }
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         &:first-child {
           flex-basis: 50%;
-          @include screen('xs_mobile') {
+          @include screen("xs_mobile") {
             flex-basis: 100%;
           }
         }
       }
     }
     &.form_col-4-8 {
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         flex-basis: calc(100% / 3);
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           flex-basis: 50%;
         }
       }
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         &:last-child {
           flex-basis: calc(100% / 3 * 2);
-          @include screen('xs_mobile') {
+          @include screen("xs_mobile") {
             flex-basis: 100%;
           }
         }
       }
     }
     &.form_col-2-10 {
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         flex-basis: calc(100% / 6);
         width: calc(100% / 6);
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           flex-basis: 100%;
           width: 100%;
         }
       }
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         &:last-child {
           flex-basis: calc(100% / 12 * 10);
           width: calc(100% / 12 * 10);
-          @include screen('xs_mobile') {
+          @include screen("xs_mobile") {
             flex-basis: 100%;
             width: 100%;
           }
@@ -355,23 +359,23 @@ select::-ms-expand {
       }
     }
     &.form_col-10-2 {
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         flex-basis: calc(100% / 6);
         width: calc(100% / 6);
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           flex-basis: 100%;
           width: calc(100% / 6);
         }
       }
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         &:first-child {
           flex-basis: calc(100% / 12 * 10);
           width: calc(100% / 12 * 10);
-          @include screen('xs_mobile') {
+          @include screen("xs_mobile") {
             flex-basis: 100%;
             width: 100%;
           }
@@ -379,40 +383,40 @@ select::-ms-expand {
       }
     }
     &.form_col-2-2-8 {
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         flex-basis: calc(100% / 12 * 2);
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           flex-basis: 50%;
         }
       }
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         &:last-child {
           flex-basis: calc(100% / 12 * 8);
-          @include screen('xs_mobile') {
+          @include screen("xs_mobile") {
             flex-basis: 100%;
           }
         }
       }
     }
     &.form_col-8-2-2 {
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         flex-basis: calc(100% / 12 * 2);
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           flex-basis: 50%;
         }
       }
-      >.form_grp,
-      >input[type="text"],
-      >select {
+      > .form_grp,
+      > input[type="text"],
+      > select {
         &:first-child {
           flex-basis: calc(100% / 12 * 8);
-          @include screen('xs_mobile') {
+          @include screen("xs_mobile") {
             flex-basis: 100%;
           }
         }
@@ -421,220 +425,220 @@ select::-ms-expand {
     //行內選單格線
     &.form_inline {
       &.form_col-6-6 {
-        >.form_grp,
-        >input[type="text"],
-        >select {
-          flex-basis: calc(50% - .6em);
-          @include screen('xs_mobile') {
-            flex-basis: calc(100% - .6em);
+        > .form_grp,
+        > input[type="text"],
+        > select {
+          flex-basis: calc(50% - 0.6em);
+          @include screen("xs_mobile") {
+            flex-basis: calc(100% - 0.6em);
           }
         }
       }
       &.form_col-4-4-4 {
-        >.form_grp,
-        >input[type="text"],
-        >select {
-          flex-basis: calc(100% / 3 - .6em);
-          @include screen('xs_mobile') {
-            flex-basis: calc(100% - .6em);
+        > .form_grp,
+        > input[type="text"],
+        > select {
+          flex-basis: calc(100% / 3 - 0.6em);
+          @include screen("xs_mobile") {
+            flex-basis: calc(100% - 0.6em);
           }
         }
       }
       &.form_col-3-3-3-3 {
-        >.form_grp,
-        >input[type="text"],
-        >select {
-          flex-basis: calc(25% - .6em);
-          @include screen('xs_mobile') {
-            flex-basis: calc(100% - .6em);
+        > .form_grp,
+        > input[type="text"],
+        > select {
+          flex-basis: calc(25% - 0.6em);
+          @include screen("xs_mobile") {
+            flex-basis: calc(100% - 0.6em);
           }
         }
       }
       &.form_col-3-9 {
-        >.form_grp,
-        >input[type="text"],
-        >select {
-          flex-basis: calc(25% - .6em);
-          @include screen('xs_mobile') {
-            flex-basis: calc(100% - .6em);
+        > .form_grp,
+        > input[type="text"],
+        > select {
+          flex-basis: calc(25% - 0.6em);
+          @include screen("xs_mobile") {
+            flex-basis: calc(100% - 0.6em);
           }
         }
-        >.form_grp,
-        >input[type="text"],
-        >select {
+        > .form_grp,
+        > input[type="text"],
+        > select {
           &:nth-child(2) {
-            flex-basis: calc(75% - .6em);
-            @include screen('xs_mobile') {
-              flex-basis: calc(100% - .6em);
+            flex-basis: calc(75% - 0.6em);
+            @include screen("xs_mobile") {
+              flex-basis: calc(100% - 0.6em);
             }
           }
         }
       }
       &.form_col-9-3 {
-        >.form_grp,
-        >input[type="text"],
-        >select {
-          flex-basis: calc(75% - .6em);
-          @include screen('xs_mobile') {
-            flex-basis: calc(100% - .6em);
+        > .form_grp,
+        > input[type="text"],
+        > select {
+          flex-basis: calc(75% - 0.6em);
+          @include screen("xs_mobile") {
+            flex-basis: calc(100% - 0.6em);
           }
         }
-        >.form_grp,
-        >input[type="text"],
-        >select {
+        > .form_grp,
+        > input[type="text"],
+        > select {
           &:nth-child(2) {
-            flex-basis: calc(25% - .6em);
-            @include screen('xs_mobile') {
-              flex-basis: calc(100% - .6em);
+            flex-basis: calc(25% - 0.6em);
+            @include screen("xs_mobile") {
+              flex-basis: calc(100% - 0.6em);
             }
           }
         }
       }
       &.form_col-3-3-6 {
-        >.form_grp,
-        >input[type="text"],
-        >select {
-          flex-basis: calc(25% - .6em);
-          @include screen('xs_mobile') {
-            flex-basis: calc(50% - .6em);
+        > .form_grp,
+        > input[type="text"],
+        > select {
+          flex-basis: calc(25% - 0.6em);
+          @include screen("xs_mobile") {
+            flex-basis: calc(50% - 0.6em);
           }
         }
-        >.form_grp,
-        >input[type="text"],
-        >select {
+        > .form_grp,
+        > input[type="text"],
+        > select {
           &:last-child {
-            flex-basis: calc(50% - .6em);
-            @include screen('xs_mobile') {
-              flex-basis: calc(100% - .6em);
+            flex-basis: calc(50% - 0.6em);
+            @include screen("xs_mobile") {
+              flex-basis: calc(100% - 0.6em);
             }
           }
         }
       }
       &.form_col-6-3-3 {
-        >.form_grp,
-        >input[type="text"],
-        >select {
-          flex-basis: calc(25% - .6em);
-          @include screen('xs_mobile') {
-            flex-basis: calc(50% - .6em);
+        > .form_grp,
+        > input[type="text"],
+        > select {
+          flex-basis: calc(25% - 0.6em);
+          @include screen("xs_mobile") {
+            flex-basis: calc(50% - 0.6em);
           }
         }
-        >.form_grp,
-        >input[type="text"],
-        >select {
+        > .form_grp,
+        > input[type="text"],
+        > select {
           &:first-child {
-            flex-basis: calc(50% - .6em);
-            @include screen('xs_mobile') {
-              flex-basis: calc(100% - .6em);
+            flex-basis: calc(50% - 0.6em);
+            @include screen("xs_mobile") {
+              flex-basis: calc(100% - 0.6em);
             }
           }
         }
       }
       &.form_col-4-8 {
-        >.form_grp,
-        >input[type="text"],
-        >select {
-          flex-basis: calc(100% / 3 - .6em);
-          @include screen('xs_mobile') {
-            flex-basis: calc(100% - .6em);
+        > .form_grp,
+        > input[type="text"],
+        > select {
+          flex-basis: calc(100% / 3 - 0.6em);
+          @include screen("xs_mobile") {
+            flex-basis: calc(100% - 0.6em);
           }
         }
-        >.form_grp,
-        >input[type="text"],
-        >select {
+        > .form_grp,
+        > input[type="text"],
+        > select {
           &:last-child {
-            flex-basis: calc(100% / 3 * 2 - .6em);
-            @include screen('xs_mobile') {
-              flex-basis: calc(100% - .6em);
+            flex-basis: calc(100% / 3 * 2 - 0.6em);
+            @include screen("xs_mobile") {
+              flex-basis: calc(100% - 0.6em);
             }
           }
         }
       }
       &.form_col-2-10 {
-        >.form_grp,
-        >input[type="text"],
-        >select {
-          flex-basis: calc(100% / 12 * 2 - .6em);
-          @include screen('xs_mobile') {
-            flex-basis: calc(100% - .6em);
+        > .form_grp,
+        > input[type="text"],
+        > select {
+          flex-basis: calc(100% / 12 * 2 - 0.6em);
+          @include screen("xs_mobile") {
+            flex-basis: calc(100% - 0.6em);
           }
         }
-        >.form_grp,
-        >input[type="text"],
-        >select {
+        > .form_grp,
+        > input[type="text"],
+        > select {
           &:last-child {
-            flex-basis: calc(100% / 12 * 10 - .6em);
-            @include screen('xs_mobile') {
-              flex-basis: calc(100% - .6em);
+            flex-basis: calc(100% / 12 * 10 - 0.6em);
+            @include screen("xs_mobile") {
+              flex-basis: calc(100% - 0.6em);
             }
           }
         }
       }
       &.form_col-10-2 {
-        >.form_grp,
-        >input[type="text"],
-        >select {
-          flex-basis: calc(100% / 12 * 2 - .6em);
-          @include screen('xs_mobile') {
-            flex-basis: calc(100% - .6em);
+        > .form_grp,
+        > input[type="text"],
+        > select {
+          flex-basis: calc(100% / 12 * 2 - 0.6em);
+          @include screen("xs_mobile") {
+            flex-basis: calc(100% - 0.6em);
           }
         }
-        >.form_grp,
-        >input[type="text"],
-        >select {
+        > .form_grp,
+        > input[type="text"],
+        > select {
           &:first-child {
-            flex-basis: calc(100% / 12 * 10 - .6em);
-            @include screen('xs_mobile') {
-              flex-basis: calc(100% - .6em);
+            flex-basis: calc(100% / 12 * 10 - 0.6em);
+            @include screen("xs_mobile") {
+              flex-basis: calc(100% - 0.6em);
             }
           }
         }
       }
       &.form_col-2-2-8 {
-        >.form_grp,
-        >input[type="text"],
-        >select {
-          flex-basis: calc(100% / 12 * 2 - .6em);
-          @include screen('xs_mobile') {
-            flex-basis: calc(50% - .6em);
+        > .form_grp,
+        > input[type="text"],
+        > select {
+          flex-basis: calc(100% / 12 * 2 - 0.6em);
+          @include screen("xs_mobile") {
+            flex-basis: calc(50% - 0.6em);
           }
         }
-        >.form_grp,
-        >input[type="text"],
-        >select {
+        > .form_grp,
+        > input[type="text"],
+        > select {
           &:last-child {
-            flex-basis: calc(100% / 12 * 8 - .6em);
-            @include screen('xs_mobile') {
-              flex-basis: calc(100% - .6em);
+            flex-basis: calc(100% / 12 * 8 - 0.6em);
+            @include screen("xs_mobile") {
+              flex-basis: calc(100% - 0.6em);
             }
           }
         }
       }
       &.form_col-8-2-2 {
-        >.form_grp,
-        >input[type="text"],
-        >select {
-          flex-basis: calc(100% / 12 * 2 - .6em);
-          @include screen('xs_mobile') {
-            flex-basis: calc(50% - .6em);
+        > .form_grp,
+        > input[type="text"],
+        > select {
+          flex-basis: calc(100% / 12 * 2 - 0.6em);
+          @include screen("xs_mobile") {
+            flex-basis: calc(50% - 0.6em);
           }
         }
-        >.form_grp,
-        >input[type="text"],
-        >select {
+        > .form_grp,
+        > input[type="text"],
+        > select {
           &:first-child {
-            flex-basis: calc(100% / 12 * 8 - .6em);
-            @include screen('xs_mobile') {
-              flex-basis: calc(100% - .6em);
+            flex-basis: calc(100% / 12 * 8 - 0.6em);
+            @include screen("xs_mobile") {
+              flex-basis: calc(100% - 0.6em);
             }
           }
         }
       }
     }
     .help {
-      font-size: .813em;
+      font-size: 0.813em;
       color: #888;
-      padding: 0 .5em;
+      padding: 0 0.5em;
     }
     // 第二層的設定
     .form_grp {
@@ -649,7 +653,7 @@ select::-ms-expand {
         flex-wrap: wrap;
         align-items: center;
         @include gutter(0);
-        @include screen('mobile') {
+        @include screen("mobile") {
           flex-basis: 100%;
         }
         &.form_inline {
@@ -660,13 +664,14 @@ select::-ms-expand {
             width: auto;
             min-width: 100px;
             display: inline-block;
-            @include screen('xs_mobile') {
-              width: calc(100% - .6em);
+            @include screen("xs_mobile") {
+              width: calc(100% - 0.6em);
               display: block;
             }
           }
         }
-        .form_grp {}
+        .form_grp {
+        }
       }
       &:first-child {
         padding-top: 0;
@@ -680,7 +685,7 @@ select::-ms-expand {
     .tel {
       input[type="text"]:first-child,
       input[type="tel"]:first-child {
-        background: url(../images/icon/icon_add.svg) no-repeat .5em center;
+        background: url(../images/icon/icon_add.svg) no-repeat 0.5em center;
         background-size: 12px;
         padding-left: 1.5em;
       }
@@ -688,9 +693,9 @@ select::-ms-expand {
       select:first-child,
       input[type="tel"]:first-child {
         width: 100px !important;
-        &~input {
+        & ~ input {
           width: calc(100% - 200px);
-          @include screen('xs_mobile') {
+          @include screen("xs_mobile") {
             width: 100% !important;
             display: block !important;
           }
@@ -701,9 +706,9 @@ select::-ms-expand {
     .birthday {
       select {
         display: inline-block;
-        margin-right: .5em;
+        margin-right: 0.5em;
         text-align-last: center;
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           width: 88% !important;
           min-width: 88% !important;
           display: inline-block !important;
@@ -727,7 +732,7 @@ select::-ms-expand {
         option {
           text-align: center;
         }
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           width: 100px;
           display: inline-block !important;
         }
@@ -735,22 +740,22 @@ select::-ms-expand {
       input[type="text"] {
         //width: calc(100% - 231px) !important;
         flex: 1 1 auto;
-        @include screen('mobile') {
+        @include screen("mobile") {
           display: block !important;
-          width: calc(100% - .6em) !important;
+          width: calc(100% - 0.6em) !important;
         }
       }
     }
     // 日期專屬
     .datepick {
       position: relative;
-      @include screen('xs_mobile') {
+      @include screen("xs_mobile") {
         width: 100%;
         display: block;
         padding-right: 0;
       }
-      &+.datepick {
-        margin-left: .3em;
+      & + .datepick {
+        margin-left: 0.3em;
         margin-right: 0;
         padding-right: 0;
         &:before {
@@ -758,7 +763,7 @@ select::-ms-expand {
           font-size: 1.5em;
           color: #777;
         }
-        @include screen('xs_mobile') {
+        @include screen("xs_mobile") {
           margin-left: 0em;
           //padding-right:.5em;
           &:before {
@@ -771,9 +776,9 @@ select::-ms-expand {
       }
       i {
         position: absolute;
-        padding: .37em .1em !important;
+        padding: 0.37em 0.1em !important;
         right: 1em;
-        top: .4em;
+        top: 0.4em;
         min-width: 1em;
         background: none;
         border: none;
@@ -785,14 +790,14 @@ select::-ms-expand {
           border: none !important;
         }
       }
-      >input[type="text"],
-      >input[type="date"] {
+      > input[type="text"],
+      > input[type="date"] {
         width: 10em;
-        @include screen('xs_mobile') {
-          width: calc(100% - .6em);
+        @include screen("xs_mobile") {
+          width: calc(100% - 0.6em);
         }
       }
-      >input[type="text"] {
+      > input[type="text"] {
         padding-right: 2em;
       }
     }
@@ -817,7 +822,7 @@ select::-ms-expand {
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    @include screen('mobile') {
+    @include screen("mobile") {
       flex-wrap: wrap;
     }
     // .form_content {
@@ -874,7 +879,7 @@ select::-ms-expand {
       align-items: center;
       input {
         &:checked {
-          &~span {
+          & ~ span {
             &:after {
               position: absolute;
               width: 1em;
@@ -882,8 +887,8 @@ select::-ms-expand {
               border-radius: 50%;
               background: #54caff;
               content: "";
-              left: .35em;
-              top: .3em;
+              left: 0.35em;
+              top: 0.3em;
               z-index: -1;
               animation: ripple 0.35s linear;
             }
@@ -895,7 +900,7 @@ select::-ms-expand {
     &.form_inline {
       label {
         //display: inline-block;
-        margin: .2em .5em 0 0;
+        margin: 0.2em 0.5em 0 0;
         flex-basis: auto;
         margin-right: 1em;
         display: inline-flex;
@@ -909,12 +914,12 @@ select::-ms-expand {
     &.form_inline {
       label {
         display: inline-block;
-        margin-right: .5em;
+        margin-right: 0.5em;
       }
-      >input,
-      >textarea,
-      >select,
-      >.input-i {
+      > input,
+      > textarea,
+      > select,
+      > .input-i {
         width: auto;
         flex: 0 1 auto;
       }
@@ -933,12 +938,12 @@ select::-ms-expand {
   align-items: center;
   label {
     vertical-align: middle;
-    margin: 0 .5em 0 0;
+    margin: 0 0.5em 0 0;
     flex: 0 1 auto;
     display: flex;
     align-items: center;
-    &~input,
-    &~textarea {
+    & ~ input,
+    & ~ textarea {
       width: auto;
       vertical-align: middle;
     }
@@ -963,7 +968,7 @@ select::-ms-expand {
   .btn_grp,
   .upload_grp {
     display: flex;
-    margin-right: .5em;
+    margin-right: 0.5em;
     width: auto;
     flex: 0 0 auto;
     // @include screen('mobile'){
@@ -977,8 +982,8 @@ select::-ms-expand {
     input[type="reset"],
     input[type="button"],
     input[type="search"] {
-      margin: .3em;
-      padding: .45em 1em;
+      margin: 0.3em;
+      padding: 0.45em 1em;
     }
   }
 }
@@ -988,8 +993,8 @@ label,
 legend {
   // white-space: nowrap;
   display: inline-block;
-  margin: 0 0 .5em 0;
-  @include screen('xs_mobile') {
+  margin: 0 0 0.5em 0;
+  @include screen("xs_mobile") {
     display: block;
   }
   &.inline {
@@ -1023,14 +1028,14 @@ textarea,
   -webkit-appearance: none; //清除 safari 的預設樣式
   -moz-appearance: none;
   appearance: none;
-  @include screen('mobile') {
+  @include screen("mobile") {
     width: 100%;
   }
 }
 
 .input-i {
   input {
-    width: calc(100% - .6em);
+    width: calc(100% - 0.6em);
   }
 }
 
@@ -1060,8 +1065,7 @@ input[type="number"] {
 }
 
 button,
-input[type="button"],
-{
+input[type="button"] {
   // @extend %btn;
   // @include btn_setting($form-focus, #FFF);
 }
@@ -1075,7 +1079,7 @@ textarea {
   @include formStyle();
   height: 5em;
   overflow-y: scroll;
-  @include screen('xs_mobile') {
+  @include screen("xs_mobile") {
     width: 100%;
   }
 }
@@ -1089,7 +1093,7 @@ input[type="password"]:focus,
 textarea:focus,
 select:focus {
   border: 1px solid lighten($form-focus, 20);
-  @include box-shadow(0px 0px 0px 2px lighten($form-focus, 20));
+  box-shadow: 0px 0px 0px 2px lighten($form-focus, 20);
   outline: none;
 }
 
@@ -1097,9 +1101,10 @@ select:focus {
 //---------------------------------------------下拉選單--------//
 select {
   line-height: 2.4em;
-  padding: 0 24px 0 .5em;
+  padding: 0 24px 0 0.5em;
   border: 1px solid $color-gray;
-  background: #fff url(../images/icon/icon_select_arrow.png) no-repeat right center;
+  background: #fff url(../images/icon/icon_select_arrow.png) no-repeat right
+    center;
   background-size: 16px;
   option {
     outline: none;
@@ -1122,7 +1127,7 @@ input[type="reset"] {
 input[type="checkbox"],
 input[type="radio"] {
   font-size: 1em;
-  margin: .3em;
+  margin: 0.3em;
   width: 1em;
   height: 1em;
   background-color: #f7f6ee;
@@ -1197,8 +1202,8 @@ input[type="checkbox"]:focus {
     top: 1px;
     right: 3px;
     @extend %btn;
-    @include btn_setting($form-focus, #FFF);
-    padding: .2em 1em !important;
+    @include btn_setting($form-focus, #fff);
+    padding: 0.2em 1em !important;
     border-radius: 4px;
     &:hover,
     &:focus {
@@ -1224,20 +1229,20 @@ img.captcha {
   display: inline-block;
   vertical-align: middle;
   max-height: 2.5em;
-  margin: 0 .5em .3em .3em;
-  &+input {
+  margin: 0 0.5em 0.3em 0.3em;
+  & + input {
     display: inline-block;
     width: auto;
     vertical-align: middle;
   }
-  ~.btn {
+  ~ .btn {
     margin-top: -1px;
   }
-  ~img {
+  ~ img {
     display: inline-block;
     vertical-align: middle;
     max-height: 2.4em;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
 }
 
@@ -1252,9 +1257,9 @@ abbr[title] {
   position: relative;
   i {
     position: absolute;
-    padding: .2em 0 !important;
-    left: .5em;
-    top: .6em;
+    padding: 0.2em 0 !important;
+    left: 0.5em;
+    top: 0.6em;
     background: none;
     border-right: 1px solid $color-gray;
     width: 2.4em;
@@ -1266,16 +1271,16 @@ abbr[title] {
     // @include screen('mobile') {
     //     left: .2em;
     // }
-    &+input {
-      padding: .5em .5em .5em 3em;
+    & + input {
+      padding: 0.5em 0.5em 0.5em 3em;
     }
   }
   input {
-    padding: .5em 3em .5em .5em;
-    &+i {
+    padding: 0.5em 3em 0.5em 0.5em;
+    & + i {
       border-right: none;
       border-left: 1px solid $color-gray;
-      right: .5em;
+      right: 0.5em;
       left: auto;
     }
   }

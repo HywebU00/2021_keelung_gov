@@ -1,20 +1,20 @@
 // function_panel setting   ------------------------
 .function_panel {
-  margin: .2em 0;
-  padding: .5em 0 .5em;
+  margin: 0.2em 0;
+  padding: 0.5em 0 0.5em;
   min-height: 35px;
-  border-top: 1px solid #DDD;
-  border-bottom: 1px solid #DDD;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   text-align: right;
   position: relative;
-  @include screen('mobile') {
-    margin: .6em 0;
-    padding: .5em 0 .5em;
+  @include screen("mobile") {
+    margin: 0.6em 0;
+    padding: 0.5em 0 0.5em;
     text-align: center;
   }
   .adSearch {
     float: left;
-    @include screen('mobile') {
+    @include screen("mobile") {
       float: none;
       margin-bottom: 1rem;
     }
@@ -22,16 +22,18 @@
       a {
         line-height: 40px;
         padding: 0 1em 0 2.5em;
-        background: $btnStyle1 url(../images/icon_search.svg) no-repeat 16px center;
+        background: $btnStyle1 url(../images/icon_search.svg) no-repeat 16px
+          center;
         background-size: 16px;
         color: #222;
         display: block;
         border-radius: 2px;
-        transition: all .5s;
+        transition: all 0.5s;
         font-weight: 500;
         &:hover,
         &:focus {
-          background: $btnStyle2 url(../images/icon_search_.svg) no-repeat 16px center;
+          background: $btnStyle2 url(../images/icon_search_.svg) no-repeat 16px
+            center;
           background-size: 16px;
           box-shadow: none;
           color: #fff;
@@ -58,7 +60,7 @@
         }
         .form_title {
           padding-top: 10px;
-          @include screen('mobile') {
+          @include screen("mobile") {
             text-align: left;
           }
         }
@@ -66,12 +68,13 @@
           text-align: left;
         }
         .btn_grp {
-          padding-bottom: .5rem;
+          padding-bottom: 0.5rem;
           button {
             margin: 0 4px;
           }
         }
-        .btn-submit {}
+        .btn-submit {
+        }
       }
     }
   }
@@ -81,16 +84,16 @@
     display: block;
     color: #666;
     span {
-      font-size: .938em;
-      @include screen('mobile') {
+      font-size: 0.938em;
+      @include screen("mobile") {
         display: none;
       }
     }
     time {
       font-family: georgia;
       font-size: 1.125em;
-      @include screen('mobile') {
-        font-size: .938em;
+      @include screen("mobile") {
+        font-size: 0.938em;
       }
     }
     &:before {
@@ -98,7 +101,7 @@
       display: inline-block;
       width: 12px;
       height: 12px;
-      top: .3em;
+      top: 0.3em;
       background: url(../images/basic/icon_time.png) no-repeat center center;
       background-size: 12px;
     }
@@ -130,7 +133,8 @@
       &:focus {
         background: $btnStyle1;
         &:before {
-          background: url(../images/basic/icon_share_.svg) no-repeat center center;
+          background: url(../images/basic/icon_share_.svg) no-repeat center
+            center;
           background-size: 16px;
         }
       }
@@ -148,7 +152,7 @@
       height: auto;
       li {
         display: block;
-        margin: 0 auto.5em;
+        margin: 0 auto 0.5em;
         &:last-child {
           margin-bottom: 0;
         }
@@ -162,7 +166,7 @@
             width: 32px;
             height: 32px;
             margin: 0 auto;
-            transition: all .2s;
+            transition: all 0.2s;
           }
           &:hover,
           &:focus {
@@ -192,10 +196,10 @@
         font-size: 1em;
         float: left;
         display: block;
-        margin: 0 .2em;
+        margin: 0 0.2em;
         a {
           display: block;
-          @include box-sizing;
+          box-sizing: border-box;
           width: 40px;
           height: 40px;
           text-align: center;
@@ -208,7 +212,7 @@
           &:hover,
           &:focus {
             background: $btnStyle1;
-            color: #FFF;
+            color: #fff;
             box-shadow: none;
           }
           &:before {
@@ -222,44 +226,52 @@
         }
         &.back {
           a:before {
-            background: url(../images/basic/icon_back.svg) no-repeat center center;
+            background: url(../images/basic/icon_back.svg) no-repeat center
+              center;
             background-size: 16px;
           }
           a:hover:before {
-            background: url(../images/basic/icon_back_.svg) no-repeat center center;
+            background: url(../images/basic/icon_back_.svg) no-repeat center
+              center;
             background-size: 16px;
           }
         }
         &.print {
           a:before {
-            background: url(../images/basic/icon_printer.png) no-repeat center center;
+            background: url(../images/basic/icon_printer.png) no-repeat center
+              center;
             background-size: 16px;
           }
           a:hover:before {
-            background: url(../images/basic/icon_printer_.png) no-repeat center center;
+            background: url(../images/basic/icon_printer_.png) no-repeat center
+              center;
             background-size: 16px;
           }
-          @include screen('mobile') {
+          @include screen("mobile") {
             display: none;
           }
         }
         &.rss {
           a:before {
-            background: url(../images/basic/icon_rss.svg) no-repeat center center;
+            background: url(../images/basic/icon_rss.svg) no-repeat center
+              center;
             background-size: 16px;
           }
           a:hover:before {
-            background: url(../images/basic/icon_rss_.svg) no-repeat center center;
+            background: url(../images/basic/icon_rss_.svg) no-repeat center
+              center;
             background-size: 16px;
           }
         }
         &.forward {
           a:before {
-            background: url(../images/basic/icon_forward.svg) no-repeat center center;
+            background: url(../images/basic/icon_forward.svg) no-repeat center
+              center;
             background-size: 16px;
           }
           a:hover:before {
-            background: url(../images/basic/icon_forward_.svg) no-repeat center center;
+            background: url(../images/basic/icon_forward_.svg) no-repeat center
+              center;
             background-size: 16px;
           }
         }
@@ -269,7 +281,7 @@
 }
 
 // function   ------------------------
-$function_color:#666;
+$function_color: #666;
 //可自訂顏色，或是自帶既有變數，但請注意背景色與字的對比度
 //icon基本設定
 %function_before {
@@ -277,14 +289,14 @@ $function_color:#666;
   content: "";
   width: 1.2em;
   height: 1.2em;
-  margin-right: .5em;
+  margin-right: 0.5em;
   display: inline-block;
 }
 
 div.function {
   box-sizing: border-box;
   @extend %clearfix;
-  margin: .5em 0;
+  margin: 0.5em 0;
   ul {
     @include li-reset;
     display: flex;
@@ -295,12 +307,12 @@ div.function {
       flex: 0 0 auto;
       button,
       a {
-        font-size: .813em;
+        font-size: 0.813em;
         display: block;
-        padding: .2em 1em;
+        padding: 0.2em 1em;
         background: $function_color;
         border-color: $function_color;
-        color: #FFF;
+        color: #fff;
         border-radius: 4px;
         &:hover,
         &:focus {
@@ -320,7 +332,8 @@ div.function {
       &.icon_print {
         a:before {
           @extend %function_before;
-          background: url(../images/basic/icon_print.svg) no-repeat center center;
+          background: url(../images/basic/icon_print.svg) no-repeat center
+            center;
           background-size: 20px;
         }
       }
@@ -328,7 +341,8 @@ div.function {
       &.icon_forward {
         a:before {
           @extend %function_before;
-          background: url(../images/basic/icon_forward.svg) no-repeat center bottom;
+          background: url(../images/basic/icon_forward.svg) no-repeat center
+            bottom;
           background-size: 20px;
         }
       }

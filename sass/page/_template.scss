@@ -33,7 +33,7 @@ body {
   @media screen and (max-width: 1200px) {
     width: 100%;
   }
-  @include screen('mobile') {
+  @include screen("mobile") {
     overflow: hidden;
     overflow-y: auto;
   }
@@ -50,7 +50,7 @@ body {
   position: relative;
   margin: 0 auto;
   padding: 3.5rem 60px 0 60px;
-  @include screen('mobile') {
+  @include screen("mobile") {
     padding: 0 30px;
   }
   .container {
@@ -64,7 +64,7 @@ body {
     line-height: 1.25em;
   }
   &.small_size {
-    font-size: .938em;
+    font-size: 0.938em;
   }
   &.large_size {
     font-size: 1.125em;
@@ -73,10 +73,10 @@ body {
   h1.title,
   h2.title {
     line-height: 1.25em;
-    margin: 1.8em 0 .4em 0;
+    margin: 1.8em 0 0.4em 0;
     color: #4a3278;
-    @include screen('mobile') {
-      margin: 0 0 .4em 0;
+    @include screen("mobile") {
+      margin: 0 0 0.4em 0;
     }
   }
 }
@@ -85,7 +85,7 @@ body {
   width: 100%;
   height: 300px;
   position: relative;
-  @include screen('mobile') {
+  @include screen("mobile") {
     display: none;
   }
   img {
@@ -119,13 +119,13 @@ body {
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
   padding: 14px 60px 20px 60px;
-  @include screen('tablet') {
+  @include screen("tablet") {
     padding: 14px 30px 20px 30px;
   }
-  @include screen('mobile') {
+  @include screen("mobile") {
     padding: 70px 30px 20px 30px;
   }
-  >.container {
+  > .container {
     .accesskey {
       left: -30px;
       margin-top: 0;
@@ -148,17 +148,17 @@ body {
     margin-right: 40px;
     margin-top: 36px;
     &.hidden {
-      +.center_block {
+      + .center_block {
         max-width: 100%;
       }
     }
-    +.center_block {
+    + .center_block {
       max-width: calc(100% - 300px);
       width: auto;
     }
-    @include screen('tablet') {
+    @include screen("tablet") {
       display: none;
-      +.center_block {
+      + .center_block {
         max-width: 100%;
       }
     }
@@ -171,7 +171,7 @@ body {
   flex-grow: 0;
   flex-shrink: 0;
   margin-right: 2em;
-  @include screen('mobile') {
+  @include screen("mobile") {
     float: none;
     display: block;
     width: 100%;
@@ -179,20 +179,20 @@ body {
     margin-bottom: 1em;
     padding-bottom: 0;
   }
-  +.center_block {
+  + .center_block {
     max-width: 798px;
   }
   nav {
     .left_title {
       background: $leftmenuColor;
-      padding: .7em 1em;
+      padding: 0.7em 1em;
       text-align: center;
       color: #fff;
       font-size: 1.25em;
       font-weight: normal;
       letter-spacing: 1px;
       margin: 0;
-      @include screen('mobile') {
+      @include screen("mobile") {
         font-size: 1em;
         text-align: left;
         position: relative;
@@ -211,20 +211,20 @@ body {
         }
       }
     }
-    >ul {
+    > ul {
       @include li-reset;
       border: 2px solid #ccc;
       border-top: 0;
-      @include screen('mobile') {
+      @include screen("mobile") {
         display: none;
       }
-      >li {
+      > li {
         border-bottom: 1px solid #ccc;
         &:last-child {
           border-bottom: 0;
         }
-        >a {
-          padding: .6em 1em .6em 2em;
+        > a {
+          padding: 0.6em 1em 0.6em 2em;
           display: block;
           color: #444;
           font-weight: bold;
@@ -274,7 +274,7 @@ body {
           li {
             border-top: 1px dotted #ccc;
             a {
-              padding: .6em 1em .6em 2.1em;
+              padding: 0.6em 1em 0.6em 2.1em;
               display: block;
               color: #444;
               position: relative;
@@ -310,12 +310,12 @@ body {
 
 .fp {
   margin: 1em auto 2em;
-  @include box-sizing;
+  box-sizing: border-box;
   padding: 1.5em 4em 1em;
   border: 1px solid #ddd;
   border-top: 3px solid $primaryColor;
   position: relative;
-  @include screen('mobile') {
+  @include screen("mobile") {
     padding: 1.5em 1em 1em;
   }
   // &:before {
@@ -336,7 +336,7 @@ body {
     margin: 0;
     .form_grp {
       display: flex;
-      @include screen('mobile') {
+      @include screen("mobile") {
         flex-direction: row;
         flex-wrap: wrap;
       }
@@ -345,7 +345,7 @@ body {
         flex: 0 0 200px;
         padding-left: 0;
         text-align: right;
-        @include screen('mobile') {
+        @include screen("mobile") {
           flex: 1 1 100%;
           text-align: left;
           max-width: 100%;
@@ -356,7 +356,7 @@ body {
         max-width: calc(100% - 200px);
         flex: auto;
         flex-basis: calc(100% - 200px);
-        @include screen('mobile') {
+        @include screen("mobile") {
           flex: 1 1 100%;
           max-width: 100%;
         }
@@ -376,11 +376,11 @@ body {
           white-space: nowrap;
           line-height: 38px;
           padding: 0 1.5em 0 2.5em;
-          margin: 0 0em .3em .5em;
+          margin: 0 0em 0.3em 0.5em;
           border: 1px solid #ccc;
           color: #444;
           border-radius: 2px;
-          transition: all .5s;
+          transition: all 0.5s;
           position: relative;
           background: #fff;
           &:hover {
@@ -393,7 +393,7 @@ body {
           }
         }
         a.refresh {
-          @include screen('mobile') {
+          @include screen("mobile") {
             margin-left: 0;
           }
         }
@@ -407,7 +407,7 @@ body {
           background-size: 16px;
           left: 1em;
           top: 10px;
-          opacity: .5;
+          opacity: 0.5;
         }
         a.play:before {
           content: "";
@@ -419,7 +419,7 @@ body {
           background-size: 16px;
           left: 1em;
           top: 10px;
-          opacity: .5;
+          opacity: 0.5;
         }
       }
     }
@@ -443,7 +443,7 @@ body {
     margin: 0 2% 1em 0;
     float: left;
     position: relative;
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     &:before {
       content: "";
       position: absolute;
@@ -456,7 +456,7 @@ body {
     &:nth-child(even) {
       margin-right: 0px;
     }
-    @include screen('mobile') {
+    @include screen("mobile") {
       float: none;
       width: 96%;
       margin: 0px auto 10px;
@@ -466,7 +466,7 @@ body {
       }
     }
     a {
-      border: 1px solid #DDD;
+      border: 1px solid #ddd;
       border-left: 1px solid $primaryColor;
       padding: 1em 1em 1em 2em;
       display: block;
@@ -474,12 +474,12 @@ body {
       @include text-overflow;
       position: relative;
       @include aSetting_nocolor;
-      transition: all .5s;
+      transition: all 0.5s;
       .num {
         position: absolute;
         width: 1em;
         top: 1em;
-        left: .5em;
+        left: 0.5em;
         text-align: right;
         &:after {
           content: ".";
@@ -504,7 +504,7 @@ body {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  @include screen('mobile') {
+  @include screen("mobile") {
     width: 100%;
     padding-bottom: 1rem;
   }
@@ -541,7 +541,7 @@ body {
         font-weight: bold;
       }
       .text {
-        color: #767676
+        color: #767676;
       }
       &:first-child:before {
         display: none;
@@ -571,7 +571,7 @@ body {
         .text {
           color: $secondaryColor;
         }
-        ~li {
+        ~ li {
           &:before {
             border-bottom: 3px solid $primaryColor;
           }
@@ -592,11 +592,11 @@ body {
     padding: 1.5em 3em 1em;
     line-height: 180%;
     margin: 1em auto 2em;
-    @include box-sizing;
+    box-sizing: border-box;
     background: #e8e8e8 url(../images/servicebg.jpg) no-repeat right top;
     border-top: 3px solid $primaryColor;
-    @include screen('mobile') {
-      padding: 1.5rem
+    @include screen("mobile") {
+      padding: 1.5rem;
     }
     p {
       margin-top: 0;
@@ -618,10 +618,10 @@ body {
   color: #fff;
   border-radius: 3px;
   line-height: 170%;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
   margin-bottom: 2em;
-  @include screen('mobile') {
-    padding: 1.5rem
+  @include screen("mobile") {
+    padding: 1.5rem;
   }
   h3 {
     margin-top: 0;
@@ -679,13 +679,13 @@ body {
       transform: rotate(45deg);
       z-index: 10;
     }
-    ~.form_grid {
+    ~ .form_grid {
       margin-top: 0;
     }
   }
   fieldset {
     margin-bottom: 15px;
-    &~fieldset {
+    & ~ fieldset {
       border-top: 1px solid #ccc;
     }
   }
@@ -693,14 +693,14 @@ body {
     padding: 0;
     line-height: 180%;
     margin: 0;
-    @include box-sizing;
+    box-sizing: border-box;
     background: none;
     border-top: 0;
     .form_group {
       padding: 1.5em;
       line-height: 180%;
       margin: 0 auto 2em;
-      @include box-sizing;
+      box-sizing: border-box;
       background: #e8e8e8 url(../images/servicebg.jpg) no-repeat right top;
       border-top: 3px solid $primaryColor;
     }
@@ -711,7 +711,7 @@ body {
       .form_title {
         max-width: 22%;
         flex: 0 0 22%;
-        @include screen('mobile') {
+        @include screen("mobile") {
           width: 100%;
           max-width: 100%;
           flex: 0 0 100%;
@@ -720,15 +720,15 @@ body {
       .form_content {
         max-width: 78%;
         flex: 0 0 78%;
-        @include screen('mobile') {
+        @include screen("mobile") {
           width: 100%;
           max-width: 100%;
           flex: 0 0 100%;
         }
         .form_grp {
-          border-bottom: 1px dashed #ccc!important;
+          border-bottom: 1px dashed #ccc !important;
           &:last-child {
-            border-bottom: 0!important;
+            border-bottom: 0 !important;
           }
           .form_title {
             width: 25%;
@@ -742,7 +742,7 @@ body {
           min-width: 50%;
           margin-left: 0;
           margin-top: 0;
-          @include screen('mobile') {
+          @include screen("mobile") {
             width: 100%;
             max-width: 100%;
             flex: 0 0 100%;
@@ -756,15 +756,15 @@ body {
           white-space: nowrap;
           line-height: 36px;
           padding: 0 1.5em 0 3.2em;
-          margin: 0 0em .3em .5em;
+          margin: 0 0em 0.3em 0.5em;
           border: 1px solid #ccc;
           color: #444;
-          border-radius: .2em;
-          transition: all .5s;
+          border-radius: 0.2em;
+          transition: all 0.5s;
           position: relative;
           background: #fff;
-          @include screen('mobile') {
-            margin: 0 0em .3em 0;
+          @include screen("mobile") {
+            margin: 0 0em 0.3em 0;
           }
           &:before {
             content: "";
@@ -776,7 +776,7 @@ body {
             background-size: contain;
             left: 1em;
             top: 10px;
-            opacity: .6;
+            opacity: 0.6;
           }
           &:hover {
             background: #444;
@@ -795,11 +795,11 @@ body {
           white-space: nowrap;
           line-height: 36px;
           padding: 0 1.5em 0 2.8em;
-          margin: 0 0em .3em .5em;
+          margin: 0 0em 0.3em 0.5em;
           border: 1px solid #ccc;
           color: #444;
-          border-radius: .2em;
-          transition: all .5s;
+          border-radius: 0.2em;
+          transition: all 0.5s;
           position: relative;
           background: #fff;
           &:before {
@@ -812,7 +812,7 @@ body {
             background-size: contain;
             left: 1em;
             top: 10px;
-            opacity: .6;
+            opacity: 0.6;
           }
           &:hover {
             background: #444;
@@ -828,9 +828,9 @@ body {
         input[type="time"] {
           width: auto;
           min-width: 40%;
-          ~span {
+          ~ span {
             margin-left: 10px;
-            @include screen('mobile') {
+            @include screen("mobile") {
               margin-left: 0;
               display: block;
             }
@@ -844,7 +844,7 @@ body {
         }
         .file_list {
           width: 540px;
-          @include screen('tablet') {
+          @include screen("tablet") {
             width: 100%;
           }
           ol {
@@ -859,22 +859,23 @@ body {
               span {
                 margin-left: 5px;
                 color: #777;
-                font-size: .875em;
+                font-size: 0.875em;
               }
               a.delete {
                 position: absolute;
                 width: 24px;
                 height: 24px;
-                top: .4em;
-                right: .3em;
+                top: 0.4em;
+                right: 0.3em;
                 display: block;
-                @include opacity(.5);
-                background: #ccc url(../images/icon/icon_trash.svg) no-repeat center center;
+                opacity: 0.5;
+                background: #ccc url(../images/icon/icon_trash.svg) no-repeat
+                  center center;
                 background-size: 16px;
                 border-radius: 3px;
                 &:hover,
                 &:focus {
-                  @include opacity(1);
+                  opacity: 1;
                 }
                 img {
                   display: block;
@@ -900,15 +901,15 @@ body {
   padding: 2em 3em 3em 3em;
   line-height: 180%;
   margin: 0 auto 2em;
-  @include box-sizing;
+  box-sizing: border-box;
   background: #e8e8e8 url(../images/servicebg.jpg) no-repeat right top;
   border-top: 3px solid $primaryColor;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
   ul,
   ol {
     @include li-reset;
     li {
-      padding: .6em .5em;
+      padding: 0.6em 0.5em;
       border-bottom: 1px solid #ccc;
       span {
         font-weight: bold;
@@ -927,18 +928,18 @@ body {
   padding: 2em 3em 3em 3em;
   line-height: 180%;
   margin: 0 auto 2em;
-  @include box-sizing;
+  box-sizing: border-box;
   background: #e8e8e8 url(../images/servicebg.jpg) no-repeat right top;
   border-top: 3px solid $primaryColor;
-  letter-spacing: .08em;
-  @include screen('mobile') {
-    padding: 1.5rem!important;
+  letter-spacing: 0.08em;
+  @include screen("mobile") {
+    padding: 1.5rem !important;
   }
   ul,
   ol {
     @include li-reset;
     li {
-      padding: .6em .5em;
+      padding: 0.6em 0.5em;
       border-bottom: 1px solid #ccc;
       span {
         font-weight: bold;

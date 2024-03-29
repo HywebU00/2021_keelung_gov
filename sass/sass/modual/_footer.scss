@@ -1,15 +1,24 @@
 footer {
-  @include clearfix;
   padding: 0 3rem 36px 3rem;
   text-align: left;
   font-size: 0.9375rem;
   background: #555;
   box-sizing: border-box;
-  @include screen('tablet') {
+  clear: both;
+  zoom: 1;
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  @include screen("tablet") {
     padding: 1rem 30px;
   }
   .container {
-    border-top: 1px solid rgba(255, 255, 255, .5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
     padding-top: 30px;
     display: flex;
     justify-content: space-between;
@@ -17,7 +26,7 @@ footer {
     &:after {
       display: none;
     }
-    @include screen('mobile') {
+    @include screen("mobile") {
       flex-direction: column;
     }
   }
@@ -33,7 +42,7 @@ footer {
     .social_icon {
       display: flex;
       margin-bottom: 1rem;
-      @include screen('mobile') {
+      @include screen("mobile") {
         width: 100%;
         justify-content: center;
       }
@@ -46,10 +55,12 @@ footer {
         font-size: 0;
         margin-right: 1rem;
         &.icon_fb {
-          background: url(../images/mp/icon_facebook.svg) no-repeat center center;
+          background: url(../images/mp/icon_facebook.svg) no-repeat center
+            center;
           background-size: 24px;
           &:hover {
-            background: $primaryColor url(../images/mp/icon_facebook.svg) no-repeat center center;
+            background: $primaryColor url(../images/mp/icon_facebook.svg)
+              no-repeat center center;
             background-size: 24px;
           }
         }
@@ -57,7 +68,8 @@ footer {
           background: url(../images/mp/icon_youtube.svg) no-repeat center center;
           background-size: 24px;
           &:hover {
-            background: $primaryColor url(../images/mp/icon_youtube.svg) no-repeat center center;
+            background: $primaryColor url(../images/mp/icon_youtube.svg)
+              no-repeat center center;
             background-size: 24px;
           }
         }
@@ -65,7 +77,8 @@ footer {
           background: url(../images/mp/icon_line.svg) no-repeat center center;
           background-size: 24px;
           &:hover {
-            background: $primaryColor url(../images/mp/icon_line.svg) no-repeat center center;
+            background: $primaryColor url(../images/mp/icon_line.svg) no-repeat
+              center center;
             background-size: 24px;
           }
         }
@@ -76,7 +89,7 @@ footer {
       ul {
         @include li-reset();
         display: flex;
-        @include screen('mobile') {
+        @include screen("mobile") {
           justify-content: center;
         }
         li {
@@ -87,7 +100,7 @@ footer {
           &:after {
             content: "|";
             color: #fff;
-            margin: 2px .6rem;
+            margin: 2px 0.6rem;
             vertical-align: middle;
           }
           &:last-child:after {
@@ -96,9 +109,9 @@ footer {
           a {
             display: block;
             padding: 2px 0;
-            color: #FFF;
+            color: #fff;
             text-align: center;
-            transition: all .3s ease-out;
+            transition: all 0.3s ease-out;
             &:hover,
             &:focus {
               text-decoration: underline;
@@ -110,15 +123,15 @@ footer {
     .copyright {
       color: #c3c3c3;
       margin-bottom: 4px;
-      @include screen('mobile') {
+      @include screen("mobile") {
         text-align: center;
       }
     }
     .update {
       color: #fff;
-      font-size: .875rem;
+      font-size: 0.875rem;
       margin-bottom: 4px;
-      @include screen('mobile') {
+      @include screen("mobile") {
         text-align: center;
       }
       em {
@@ -132,7 +145,7 @@ footer {
       flex: 0 0 auto;
       display: flex;
       align-items: flex-end;
-      @include screen('mobile') {
+      @include screen("mobile") {
         justify-content: center;
       }
       a {
